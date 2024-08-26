@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subject 6</title>
+    <title>P.E 1</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
 
@@ -18,7 +18,7 @@
             background-attachment: fixed;
             font-family: 'Open Sans', sans-serif;
             color: white;
-            text-align: center; /* Center text globally */
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         .container {
@@ -27,46 +27,70 @@
             margin: 0 auto;
             padding: 20px;
             box-sizing: border-box;
+            text-align: center;
         }
 
-        h2 {
+        h1 {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.5em; /* Reduced size of title */
+            font-size: 1.8em; /* Adjust title size */
             margin-bottom: 20px;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .back-button:hover {
-            background-color: #0056b3;
         }
 
         .content-section {
             padding: 15px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 8px;
+            text-align: left;
             margin: 0 auto;
-            max-width: 500px;
+            max-width: 100%;
+            margin-bottom: 40px; /* Add margin for space before back button */
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .back-button {
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2em;
+            }
+
+            .back-button {
+                padding: 8px 16px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>P.E 1</h2>
-        <a href="index.html" class="back-button">&lt; Back to Main</a>
+        <h1>P.E 1</h1>
         <div class="content-section">
             <p>This program is currently under development and is not yet complete. Please check back later for updates.</p>
         </div>
+        <a href="index.html" class="back-button">&lt; Back to Main</a>
     </div>
 </body>
 </html>
