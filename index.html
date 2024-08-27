@@ -13,7 +13,7 @@
             height: 100%;
             overflow: auto;
             background-color: #1e1e1e;
-            background-image: url('background-image.jpeg');
+            background-image: url('background-image.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -30,56 +30,77 @@
             text-align: center;
         }
 
-        h1 {
-            margin: 0;
+        h1, .bsis-a {
             font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            color: #2196F3; /* IS-themed blue color */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
         .bsis-a {
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
             font-size: 1.5rem;
+            color: #1976D2; /* Slightly darker blue for contrast */
             margin-bottom: 20px;
         }
 
         .subject-box {
             margin-bottom: 20px;
             padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 8px;
             font-size: 1.2rem;
             text-align: left;
+            color: #ffffff; /* Ensures text color is white */
         }
 
-        .subject-box h2 {
-            margin-top: 0;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.3rem;
+        /* Unique colors for each announcement box */
+        .subject-box:nth-of-type(1) {
+            background: linear-gradient(135deg, #FF5733, #FFC300); /* Orange to yellow */
         }
 
-        .subject-box a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
+        .subject-box:nth-of-type(2) {
+            background: linear-gradient(135deg, #DAF7A6, #28B463); /* Light green to green */
         }
 
-        .subject-box a:hover {
-            text-decoration: underline;
+        .subject-box:nth-of-type(3) {
+            background: linear-gradient(135deg, #FF69B4, #C71585); /* Pink to violet red */
+        }
+
+        .subject-box:nth-of-type(4) {
+            background: linear-gradient(135deg, #00BFFF, #1E90FF); /* Deep sky blue to dodger blue */
+        }
+
+        .subject-box:nth-of-type(5) {
+            background: linear-gradient(135deg, #FF4500, #FFD700); /* Orange red to gold */
+        }
+
+        .subject-box:nth-of-type(6) {
+            background: linear-gradient(135deg, #90EE90, #3CB371); /* Light green to medium sea green */
+        }
+
+        .subject-box:nth-of-type(7) {
+            background: linear-gradient(135deg, #D3D3D3, #A9A9A9); /* Light grey to dark grey */
+        }
+
+        .subject-box:nth-of-type(8) {
+            background: linear-gradient(135deg, #FF6347, #FF4500); /* Tomato to orange red */
         }
 
         .announcement-small {
             margin-top: 10px;
             padding: 10px;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.5); /* Darker background for better text contrast */
             border-radius: 5px;
             font-size: 0.9rem;
+            color: #ffffff; /* Ensure text color is white */
         }
 
         .other-announcements {
             margin-top: 30px;
             padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #0D47A1; /* Dark blue background */
             border-radius: 8px;
             font-size: 1.1rem;
             text-align: left;
@@ -103,13 +124,13 @@
             width: 100%;
             max-width: 300px;
             height: auto;
-            border-radius: 10px;
+            border-radius: 10px; /* Removed the border */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>BS Information Systems 1</h2>
+        <h1>BS Information Systems 1</h1>
         <div class="bsis-a">BSIS-A</div>
 
         <div class="subject-box">
@@ -132,52 +153,56 @@
                 NOTE:...
             </div>
         </div>
-                <div class="subject-box">
+
+        <div class="subject-box">
             <h2><a href="subject4.html">INTRODUCTION TO COMPUTING</a></h2>
             <div class="announcement-small">
                 NOTE:...
             </div>
         </div>
+
         <div class="subject-box">
-            <h2><a href="subject5.html">COMPUTER  PROGRAMMING 1 (LEC & LAB)</a></h2>
+            <h3><a href="subject5.html">COMPUTER PROGRAMMING 1 (LEC & LAB)</a></h3>
             <div class="announcement-small">
                 NOTE:...
             </div>
         </div>
-                <div class="subject-box">
+
+        <div class="subject-box">
             <h2><a href="subject6.html">P.E 1</a></h2>
             <div class="announcement-small">
                 NOTE:...
             </div>
         </div>
-               <div class="subject-box">
+
+        <div class="subject-box">
             <h2><a href="subject7.html">MATHEMATICS IN THE MODERN WORLD</a></h2>
             <div class="announcement-small">
                 NOTE:...
             </div>
         </div>
-               <div class="subject-box">
+
+        <div class="subject-box">
             <h2><a href="subject8.html">GENERAL BIOLOGY</a></h2>
             <div class="announcement-small">
-              NOTE:...
+                NOTE:...
             </div>
         </div>
-               <div class="subject-box">
-            <h2><a href="subject9.html">FRESHMEN ORIENTATION FOR IS</a></h2>
+
+        <div class="subject-box">
+            <h2><a href="subject6.html">FRESHMEN ORIENTATION FOR IS</a></h2>
             <div class="announcement-small">
                 Note:...
             </div>
         </div>
 
-
         <div class="other-announcements">
-            <h5>Other Announcements:</h5> This program is currently under development and is not yet complete. Please check back later for updates.
-
-
+            <h5>Other Announcements:</h5>
+            This program is currently under development and is not yet complete. Please check back later for updates.
         </div>
 
         <div class="class-sched-title">Class Sched:</div>
-        
+
         <div class="image-section">
             <img src="sched.png" alt="Class Schedule Image">
         </div>
