@@ -46,6 +46,12 @@
             margin-bottom: 40px; /* Add margin for space before back button */
         }
 
+        video {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 20px; /* Space between text and video */
+        }
+
         .back-button {
             display: inline-block;
             padding: 12px 24px;
@@ -89,6 +95,11 @@
         <h1>INTRODUCTION TO COMPUTING</h1>
         <div class="content-section">
             <p>This program is currently under development and is not yet complete. Please check back later for updates.</p>
+            <!-- Video Section -->
+            <video autoplay muted loop controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <a href="index.html" class="back-button">&lt; Back to Main</a>
     </div>
