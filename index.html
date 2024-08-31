@@ -54,39 +54,84 @@
             text-align: left;
             color: #ffffff; /* Ensures text color is white */
             background: linear-gradient(135deg, #FF5733, #FFC300); /* Default gradient */
+            animation-duration: 0.9s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
         }
 
-        /* Unique colors for each subject box */
+        /* Unique animations for each subject box */
         .subject-box:nth-of-type(1) {
-            background: linear-gradient(135deg, #FF5733, #FFC300); /* Orange to yellow */
+            animation-name: gradientAnimation1;
         }
 
         .subject-box:nth-of-type(2) {
-            background: linear-gradient(135deg, #DAF7A6, #28B463); /* Light green to green */
+            animation-name: gradientAnimation2;
         }
 
         .subject-box:nth-of-type(3) {
-            background: linear-gradient(135deg, #FF69B4, #C71585); /* Pink to violet red */
+            animation-name: gradientAnimation3;
         }
 
         .subject-box:nth-of-type(4) {
-            background: linear-gradient(135deg, #00BFFF, #1E90FF); /* Deep sky blue to dodger blue */
+            animation-name: gradientAnimation4;
         }
 
         .subject-box:nth-of-type(5) {
-            background: linear-gradient(135deg, #FF4500, #FFD700); /* Orange red to gold */
+            animation-name: gradientAnimation5;
         }
 
         .subject-box:nth-of-type(6) {
-            background: linear-gradient(135deg, #90EE90, #3CB371); /* Light green to medium sea green */
+            animation-name: gradientAnimation6;
         }
 
         .subject-box:nth-of-type(7) {
-            background: linear-gradient(135deg, #D3D3D3, #A9A9A9); /* Light grey to dark grey */
+            animation-name: gradientAnimation7;
         }
 
         .subject-box:nth-of-type(8) {
-            background: linear-gradient(135deg, #FF6347, #FF4500); /* Tomato to orange red */
+            animation-name: gradientAnimation8;
+        }
+
+        /* Keyframes for each subject box */
+        @keyframes gradientAnimation1 {
+            0% { background: linear-gradient(135deg, #FF5733, #FFC300); }
+            100% { background: linear-gradient(135deg, #FF4500, #FFD700); }
+        }
+
+        @keyframes gradientAnimation2 {
+            0% { background: linear-gradient(135deg, #DAF7A6, #28B463); }
+            100% { background: linear-gradient(135deg, #90EE90, #3CB371); }
+        }
+
+        @keyframes gradientAnimation3 {
+            0% { background: linear-gradient(135deg, #FF69B4, #C71585); }
+            100% { background: linear-gradient(135deg, #FF6347, #FF4500); }
+        }
+
+        @keyframes gradientAnimation4 {
+            0% { background: linear-gradient(135deg, #00BFFF, #1E90FF); }
+            100% { background: linear-gradient(135deg, #00CED1, #20B2AA); }
+        }
+
+        @keyframes gradientAnimation5 {
+            0% { background: linear-gradient(135deg, #FF4500, #FFD700); }
+            100% { background: linear-gradient(135deg, #FF6347, #FF4500); }
+        }
+
+        @keyframes gradientAnimation6 {
+            0% { background: linear-gradient(135deg, #90EE90, #3CB371); }
+            100% { background: linear-gradient(135deg, #32CD32, #228B22); }
+        }
+
+        @keyframes gradientAnimation7 {
+            0% { background: linear-gradient(135deg, #D3D3D3, #A9A9A9); }
+            100% { background: linear-gradient(135deg, #C0C0C0, #808080); }
+        }
+
+        @keyframes gradientAnimation8 {
+            0% { background: linear-gradient(135deg, #FF6347, #FF4500); }
+            100% { background: linear-gradient(135deg, #FF7F50, #FF4500); }
         }
 
         .announcement-small {
@@ -158,7 +203,7 @@
         <div class="subject-box">
             <h2><a href="subject4.html">INTRODUCTION TO COMPUTING</a></h2>
             <div class="announcement-small">
-                NOTE: Writing work no.2 in google classroom
+                NOTE: ...
             </div>
         </div>
 
@@ -209,4 +254,4 @@
         </div>
     </div>
 </body>
-</html>
+            </html
