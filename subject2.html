@@ -12,7 +12,7 @@
             padding: 0;
             height: 100%;
             background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
+            background-image: url('background-image.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -62,6 +62,22 @@
             background-color: #0056b3;
         }
 
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0; /* Adjust margin for better spacing */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 300px; /* Control max width to avoid overflow */
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 8px; /* Optional: add some rounding for aesthetics */
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             h1 {
@@ -80,6 +96,10 @@
 
             .back-button {
                 padding: 8px 16px;
+            }
+
+            .image-container img {
+                max-width: 200px; /* Reduce max width on smaller screens */
             }
         }
     </style>
@@ -103,12 +123,15 @@
             <p><b style="color: skyblue;">William James</b> - was one of the earliest psychologists to study the self and conceptualized the self as having two aspects, the “I” and “me”.</p>
             <p><b style="color: skyblue;">Actual Self</b> - is who you are at the moment.</p>
             <p><b style="color: skyblue;">Ideal Self</b> - is who you like to be.</p>
-            <p><b style="color: skyblue;">Downward Social Comparison/</b> - is the more common type of comparing ourselves to others. As the name implies, we create a positive self-concept by comparing ourselves with those who are worse off than us.</p>
+            <p><b style="color: skyblue;">Downward Social Comparison</b> - is the more common type of comparing ourselves to others. As the name implies, we create a positive self-concept by comparing ourselves with those who are worse off than us.</p>
             <h2>ESSAY</h2>
-            <p><strong>What is Id, Ego, and Super Ego?</strong></p>
-            <p>The id is the primitive and instinctive component of personality.</p>
-            <p>Freud’s ego is the rational part of the psyche that mediates between the instinctual desires of the id and the moral constraints of the superego, operating primarily at the conscious level.</p>
-            <p>Freud’s superego is the moral component of the psyche, representing internalized societal values and standards. It contrasts with the id’s desires, guiding behavior towards moral righteousness and inducing guilt when standards aren’t met.</p>
+            <p><strong style="color: skyblue;">What is Id, Ego, and Super Ego?</strong></p>
+           <div class="image-container">
+                <img src="ss.png" alt="Description of image">
+            </div>
+            <p>The <b style="color: red;">Id</b> is the primitive and instinctive component of personality.</p>
+            <p>Freud’s <b style="color: red;">Ego</b> is the rational part of the psyche that mediates between the instinctual desires of the id and the moral constraints of the superego, operating primarily at the conscious level.</p>
+            <p>Freud’s <b style="color: red;">Superego</b> is the moral component of the psyche, representing internalized societal values and standards. It contrasts with the id’s desires, guiding behavior towards moral righteousness and inducing guilt when standards aren’t met.</p>
             <p><strong>Explain Downward Social Comparison.</strong></p>
             <p>Downward Social Comparison - is the more common type of comparing ourselves to others. As the name implies, we create a positive self-concept by comparing ourselves with those who are worse off than us.</p>
             <p><strong>Differentiate Moi and Personne.</strong></p>
