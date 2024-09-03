@@ -79,16 +79,20 @@
             }
 .image-container {
             display: flex;
+.image-container {
+            display: flex;
             justify-content: center;
             align-items: center;
-            height: 20vh;
+            margin: 20px 0; /* Adjust margin for better spacing */
         }
 
         .image-container img {
             width: 100%;
+            max-width: 300px; /* Control max width to avoid overflow */
             height: auto;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 21 / 9;
             object-fit: cover;
+            border-radius: 8px; /* Optional: add some rounding for aesthetics */
         }
             .back-button {
                 padding: 8px 16px;
