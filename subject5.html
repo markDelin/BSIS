@@ -12,7 +12,7 @@
             padding: 0;
             height: 100%;
             background-color: #1e1e1e;
-            background-image: url('background-image.jpg');
+            background-image: url('background-image (1).jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -29,7 +29,12 @@
             box-sizing: border-box;
             text-align: center;
         }
-
+b{
+  color: skyblue;
+}
+<h4>{
+  color: lime;
+}
         h1 {
             font-family: 'Roboto', sans-serif;
             font-size: 1.8em; /* Adjust title size */
@@ -67,6 +72,19 @@
             h1 {
                 font-size: 1.5em;
             }
+            h4{
+              color: #fa0063;
+            }
+            h3{
+              color: skyblue;
+              text-align: center;
+              .p{
+                font-size: 0.1em;
+              }
+            }
+            b{
+              color: #d0ff00;
+            }
 
             .back-button {
                 padding: 10px 20px;
@@ -88,7 +106,101 @@
     <div class="container">
         <h1>COMPUTER PRORAMMING 1 <h1>(LEC & LAB)</h1></h1>
         <div class="content-section">
-            <p>This program is currently under development and is not yet complete. Please check back later for updates.</p>
+            <p><h3>Reviewer in Computer Programming</h3></p>
+            <p><b>Literal</b> -  A data used for representing fixed values.</p>
+            <h4>Types of Literals</h4>
+            <p>1. <b>Integer Numeric Literals</b></p>
+            <li>Decimal (Base 10)</li>
+<li>Octal (Base 8)</li>
+<li>Hexadecimal (Base 16)</li>
+<p>2. <b>Floating-Point Literals</b></p>
+<li>Represent numbers with a decimal point.</li>
+<p>3. <b>Character Literals</b></p>
+<li>Single letters enclosed in single quotes: 'a'</li>
+<p>4. <b>String Literals</b></p>
+<li>Words or sentences enclosed in double quotes: "Hello"</li>
+
+<h3>Fundamental Data Types</h3>
+
+<p>1. <b style="color: red;">int</b> (Integer) - 2/4 bytes</p>
+<p>2. <b style="color: red;">float</b> (Floating-point) - 4 bytes</p>
+<p>3. <b style="color: red;">double</b> (Double floating-point) - 8 bytes</p>
+<p>4. <b style="color: red;">char</b>(Character) - 1 byte</p>
+<p>5. <b style="color: red;">wchar_t</b> (Wide character) - 2 bytes</p>
+<p>6. <b style="color: red;">bool</b> (Boolean) - Can store true or false</p>
+<p>7. <b style= "color: red;">void</b> - Represents an empty type</p>
+
+<h3 style="color: #0089ff;">C++ Data Types</h3>
+<p>1. <b style="color: #00ff96;">int</b> - 
+Can hold whole numbers.</p>
+<p>2. <b style="color:#00ff96;">double</b> - 
+Can hold numbers with decimals or in exponential notation.</p>
+<ul style="font-size: 0.8em;"><b style="color:#ff2400;">Ex.</b>
+45E10 (means 45 × 10^10)
+<ul>2E2 (means 2 × 10^2)</ul></ul>
+<p>3. <b style="color: #00ff96;">char</b>
+ - Used to store single characters.</p>
+<ul style="font-size: 0.8em;">Ex. char name = 'c';
+<p>Ex. for a string: char name[10] = "Ericson";</p></ul>
+<p>4. <b style="color: #00ff96;">wchar_t
+</b> - Used for wide characters.
+<ul style="font-size:0.8em;">Ex. wchar_t text = L'C';</ul></p>
+<p>5. <b style="color: #00ff96;">bool</b>
+ - Used to store boolean values (true or false).
+<ul style="font-size:0.8em;">Ex. bool cond = false;</ul></p>
+<p>6. <b style="color: #00ff96;">void</b>
+ - Represents an empty value or no data.</p>
+
+<h3 style="color:#ff5c00;">Modifiers</h3>
+<p><b style="color: #dc80ffcd;">signed</b> - Can hold positive and negative values.</p>
+<p><b style="color: #dc80ffcd;">unsigned</b> - Can only hold positive values.</p>
+<p><b style="color: #dc80ffcd;">short</b>   - 2 bytes (range: -32,768 to 32,767)</p>
+<p><b style="color: #dc80ffcd;">unsigned short</b> - 2 bytes (range: 0 to 65,535)</p>
+
+<p><b style="color: #dc80ffcd;">long</b>  - Used for larger integers.</p>
+
+<p><b style="color: #dc80ffcd;">unsigned long</b> - Positive large integers.</p>
+
+<p><b style="color: #dc80ffcd;">long long </b> - Very large integers.</p>
+
+<p><b style="color: #dc80ffcd;">unsigned long long</b> - Positive very large integers.</p>
+
+<p><b style="color: #dc80ffcd;">long double </b> - Used for large floating-point numbers (12 bytes).</p>
+
+<p><b style="color: #dc80ffcd;">signed char</b> - Range from -128 to 127.</p>
+
+<p><b style="color: #dc80ffcd;">unsigned char </b> - Range from 0 to 255.</p>
+
+<h3 style="color:#80f9ffcd;">Constants</h3>
+
+<p>Constants are values that do not change.</p>
+<ul style="font-size:0.8em;">
+<p>Ex. const double PI = 3.14;</p>
+<p>const int MAGIC_NUMBER = 42;</p>
+<p>Note: Constants should be capitalized by naming convention.</p></ul>
+
+<h3 style="color: red;">Operators</h3>
+
+<p>1. Addition (+)
+ - Adds two numbers.</p>
+<li>Ex. 5 + 3 results in 8.</li>
+
+<p>2. Subtraction (-)
+ - Subtracts one number from another.</p>
+<li>Ex. 7 - 2 results in 5.</li>
+
+<p>3. Multiplication (*)
+ - Multiplies two numbers.</p>
+<li>Ex. 6 * 4 results in 24.</li>
+
+<p>4. Division (/)
+ - Divides one number by another.</p>
+<li>Ex. 8 / 2 results in 4.</li>
+<p>5. Modulo (%)
+ - Used for finding the remainder when dividing two numbers.</p>
+
+<li>Ex. 10 % 3 results in 1 (since 3 goes into 10 three times, leaving a remainder of 1).</li>
+
         </div>
         <a href="index.html" class="back-button">&lt; Back to Main</a>
     </div>
