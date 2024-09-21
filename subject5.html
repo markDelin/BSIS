@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <title>COMPUTER PROGRAMMING 1 (LEC & LAB)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
@@ -12,7 +13,7 @@
             padding: 0;
             height: 100%;
             background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
+            background-image: url('background-image.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -103,6 +104,7 @@ b{
     </style>
 </head>
 <body>
+<div id="content-to-capture">
     <div class="container">
         <h1>COMPUTER PRORAMMING 1 <h1>(LEC & LAB)</h1></h1>
         <div class="content-section">
@@ -201,8 +203,22 @@ Can hold numbers with decimals or in exponential notation.</p>
 
 <li>Ex. 10 % 3 results in 1 (since 3 goes into 10 three times, leaving a remainder of 1).</li>
 
+</div>
+    <button id="capture-button">Download Screenshot</button>
+
+    <script>
+        document.getElementById("capture-button").addEventListener("click", function () {
+            html2canvas(document.getElementById("content-to-capture")).then(function (canvas) {
+                var link = document.createElement("a");
+                link.download = 'screenshot.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        });
+    </script>
+
         </div>
-        <a href="index.html" class="back-button">&lt; Back to Main</a>
+        <p style="text-align: center"><a href="index.html" class="back-button">&lt; Back to Main</a></p>
     </div>
 </body>
 </html>
