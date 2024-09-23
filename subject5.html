@@ -21,7 +21,7 @@
             color: white;
             overflow-x: hidden; /* Prevent horizontal scroll */
         }
-
+        
         .container {
             width: 100%;
             max-width: 600px;
@@ -91,7 +91,10 @@ b{
                 padding: 10px 20px;
             }
         }
-
+.center-image {
+            display: block;
+            margin: 0 auto;
+            width: 100px;
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.2em;
@@ -109,6 +112,27 @@ b{
         <h1>COMPUTER PRORAMMING 1 <h1>(LEC & LAB)</h1></h1>
         <div class="content-section">
             <p><h3>Reviewer in Computer Programming</h3></p>
+            <b>Flowchart</b> - represent the process.
+            <h4>Basic symbol of flowcharts</h4>
+            <li><b>Oval</b> (Terminator) -Indicates the start or end of a process.</li>
+            <img src="oval.png" alt="Centered Image" class="center-image">
+<li><b>Rectangle</b> (Process) - Represents a process, task, or action to be performed.</li>
+<img src="rectangle.png" alt="Centered Image" class="center-image">
+<li><b>Diamond</b> (Decision) - Represents a decision or branching point where the flow can take different paths based on a condition.</li>
+<img src="diamond.png" alt="Centered Image" class="center-image">
+<li><b>Parallelogram</b> (Input/Output) - Represents input (e.g., user input) or output (e.g., displaying results).</li>
+<img src="paral.png" alt="Centered Image" class="center-image">
+<li><b>Arrow</b> (Flow Line) Shows the direction of the flow from one step to another.</li>
+<img src="arrow.png" alt="Centered Image" class="center-image">
+
+            <b>Algorithm</b> - step by step procedures.
+            <p><b style= "color: blue;">C++</b> was created by <b style= "color: red;">Bjarne Stroustrup</b> in <b>1983</b>.</p>
+            <p><b>Comments</b> - makes our code readable.</p>
+            <li>dubugging purposes.</li>
+            <li>code collaboration.</li>
+            <p><b>syntax</b> - used to write code.</p>
+            <p><b>variables</b> - memory location.</p>
+            <p><b>control structure</b> - flow of the program.</p>
             <p><b>Literal</b> -  A data used for representing fixed values.</p>
             <h4>Types of Literals</h4>
             <p>1. <b>Integer Numeric Literals</b></p>
@@ -183,28 +207,28 @@ Can hold numbers with decimals or in exponential notation.</p>
 
 <h3 style="color: red;">Operators</h3>
 
-<p>1. Addition (+)
+<p>1. <b style="color: #c2ff22">Addition</b> (+)
  - Adds two numbers.</p>
 <li>Ex. 5 + 3 results in 8.</li>
 
-<p>2. Subtraction (-)
+<p>2. <b style="color: #c2ff22">Subtraction</b> (-)
  - Subtracts one number from another.</p>
 <li>Ex. 7 - 2 results in 5.</li>
 
-<p>3. Multiplication (*)
+<p>3. <b style="color: #c2ff22">Multiplication</b> (*)
  - Multiplies two numbers.</p>
 <li>Ex. 6 * 4 results in 24.</li>
 
-<p>4. Division (/)
+<p>4. <b style="color: #c2ff22">Division </b>(/)
  - Divides one number by another.</p>
 <li>Ex. 8 / 2 results in 4.</li>
-<p>5. Modulo (%)
+<p>5. <b style="color: #c2ff22">Modulo</b> (%)
  - Used for finding the remainder when dividing two numbers.</p>
 
 <li>Ex. 10 % 3 results in 1 (since 3 goes into 10 three times, leaving a remainder of 1).</li>
-<h6 style= "text-align: center;">Note: open nyo sa browser para ma-download.<p>(not working in ios devices <a href= "https://drive.google.com/file/d/15oaLLiuJr3Tg20LfydOl4tOlTE43WWAJ/view?usp=drivesdk">alternative</a>)</p></h6>
+
 </div>
-    <button id="capture-button">Download</button>
+    <button id="capture-button">Download Screenshot</button>
 
     <script>
         document.getElementById("capture-button").addEventListener("click", function () {
@@ -216,7 +240,6 @@ Can hold numbers with decimals or in exponential notation.</p>
             });
         });
     </script>
-        
 
         </div>
         <p style="text-align: center"><a href="index.html" class="back-button">&lt; Back to Main</a></p>
