@@ -1,271 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BS Information Systems 1</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS Information Systems</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: auto;
-            background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Open Sans', sans-serif;
-            color: white;
-        }
+    /* MATRIX BACKGROUND */
+    .matrix-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: black;
+      overflow: hidden;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
+    .matrix-background canvas {
+      display: block;
+    }
 
-        h1, .bsis-a {
-            font-family: 'Roboto', sans-serif;
-            font-size: 2.5rem;
-            color: #2196F3; /* IS-themed blue color */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-            letter-spacing: 1.5px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+    .container {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-        .bsis-a {
-            font-size: 1.5rem;
-            color: #1976D2; /* Slightly darker blue for contrast */
-            margin-bottom: 20px;
-        }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
 
-        .subject-box {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            text-align: left;
-            color: #ffffff; /* Ensures text color is white */
-            background: linear-gradient(135deg, #FF5733, #FFC300); /* Default gradient */
-            animation-duration: 60s;
-            animation-timing-function: ease-in-out;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
-        }
+    .bsis-a {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
 
-        /* Unique animations for each subject box */
-        .subject-box:nth-of-type(1) {
-            animation-name: gradientAnimation1;
-        }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
 
-        .subject-box:nth-of-type(2) {
-            animation-name: gradientAnimation2;
-        }
+    .card {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ff00;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 255, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        .subject-box:nth-of-type(3) {
-            animation-name: gradientAnimation3;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 255, 0, 0.4);
+    }
 
-        .subject-box:nth-of-type(4) {
-            animation-name: gradientAnimation4;
-        }
+    .card h2 {
+      font-size: 1.2rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+      text-align: center
+    }
 
-        .subject-box:nth-of-type(5) {
-            animation-name: gradientAnimation5;
-        }
+    .card a {
+      text-decoration: none;
+      color: #00ff00;
+    }
 
-        .subject-box:nth-of-type(6) {
-            animation-name: gradientAnimation6;
-        }
+    .card a:hover {
+      text-decoration: underline;
+    }
 
-        .subject-box:nth-of-type(7) {
-            animation-name: gradientAnimation7;
-        }
+    .announcement-small {
+      background-color: rgba(0, 255, 0, 0.1);
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 0.9rem;
+      color: #00ff00;
+      margin-top: 10px;
+    }
 
-        .subject-box:nth-of-type(8) {
-            animation-name: gradientAnimation8;
-        }
-.subject-box:nth-of-type(9) {
-            animation-name: gradientAnimation9;
-        }
-        .subject-box:nth-of-type(10) {
-            animation-name: gradientAnimation10;
-        }
-        /* Keyframes for each subject box */
-        @keyframes gradientAnimation1 {
-            0% { background: linear-gradient(135deg, #e2ff02, #FFC300); }
-            100% { background: linear-gradient(135deg, #79ff4e, #ce39ff); }
-        }
+    .other-announcements {
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #00ff00;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #00ff00; /* Added border */
+}
 
-        @keyframes gradientAnimation2 {
-            0% { background: linear-gradient(135deg, #a6f7f5, #f9fa00); }
-            100% { background: linear-gradient(135deg, #ffffff, #ff3131); }
-        }
+    .schedule {
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      padding: 8px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      border: 2px solid #00ff00;
+    }
 
-        @keyframes gradientAnimation3 {
-            0% { background: linear-gradient(135deg, #ffffff, #C71585); }
-            100% { background: linear-gradient(135deg, #6aff47, #ffffff); }
-        }
+    .schedule table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-        @keyframes gradientAnimation4 {
-            0% { background: linear-gradient(135deg, #0007e9, #ffffff); }
-            100% { background: linear-gradient(135deg, #ffffff, #c40000); }
-        }
+    .schedule table,
+    .schedule th,
+    .schedule td {
+      border: 1px solid #00ff00;
+    }
 
-        @keyframes gradientAnimation5 {
-            0% { background: linear-gradient(135deg, #ffffff, #FFD700); }
-            100% { background: linear-gradient(135deg, #ff47e0, #ffffff); }
-        }
+    .schedule th,
+    .schedule td {
+      padding: 5px;
+      text-align: center;
+    }
 
-        @keyframes gradientAnimation6 {
-            0% { background: linear-gradient(135deg, #90EE90, #ffffff); }
-            100% { background: linear-gradient(135deg, #ffffff, #228B22); }
-        }
+    .schedule td:last-child {
+      padding-left: 10px;
+    }
 
-        @keyframes gradientAnimation7 {
-            0% { background: linear-gradient(135deg, #ffffff, #2cf5ff); }
-            100% { background: linear-gradient(135deg, #3c27f9, #ffffff); }
-        }
-
-        @keyframes gradientAnimation8 {
-            0% { background: linear-gradient(135deg, #ffffff, #FF4500); }
-            100% { background: linear-gradient(135deg, #FF7F50, #ffffff); }
-        }
-@keyframes gradientAnimation9 {
-            0% { background: linear-gradient(135deg, #00f517, #ffffff); }
-            100% { background: linear-gradient(135deg, #ffffff, #00ffd2); }
-        }
-@keyframes gradientAnimation10 {
-            0% { background: linear-gradient(135deg, #ffffff, #942cff); }
-            100% { background: linear-gradient(135deg, #beff04, #ffffff); }
-        }
-        .announcement-small {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5); 
-            border-radius: 5px;
-            font-size: 0.9rem;
-            color: #ffffff; 
-        }
-
-        .other-announcements {
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #0D47A1; /* Dark blue background */
-            border-radius: 8px;
-            font-size: 1.1rem;
-            text-align: left;
-        }
-
-        .class-sched-title {
-            margin-top: 30px;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.3rem;
-            text-align: center;
-        }
-
-        .image-section {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-section img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            border-radius: 10px; /* Removed the border */
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      border: 2px solid #00ff00;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>BS Information Systems 1</h1>
-        <div class="bsis-a">BSIS-A</div>
+  <!-- Matrix Background -->
+  <div class="matrix-background">
+    <canvas id="matrix"></canvas>
+  </div>
 
-        <div class="subject-box">
-            <h2><a href="subject1.html">NSTP 1</a></h2>
-            <div class="announcement-small">
-                NOTE:...
-            </div>
+  <div class="container">
+    <h1>BS Information Systems</h1>
+    <div class="bsis-a">BSIS-1A</div>
+
+    <div class="cards-container">
+      <div class="card">
+        <h2><a href="subject1.html">Computer Programming 2 (Lec + Lab)</a></h2>
+        <div class="announcement-small">NOTE: Details coming soon.</div>
+      </div>
+      <div class="card">
+        <h2><a href="subject2.html">Fundamentals of Information System</a></h2>
+        <div class="announcement-small">NOTE: Details coming soon.</div>
+      </div>
+      <div class="card">
+        <h2><a href="subject3.html">Quantitative Methods (Data Analysis)</a></h2>
+        <div class="announcement-small">NOTE: Details coming soon.</div>
+      </div>
+      <div class="card">
+        <h2><a href="subject4.html">Retorika</a></h2>
+        <div class="announcement-small">NOTE: Details coming soon.</div>
+      </div>
+        <div class="card">
+        <h2><a href="subject5.html">Remedial English</a></h2>
+        <div class="announcement-small">NOTE: Details coming soon.</div>
+      </div>
+        <div class="card">
+          <h2><a href="subject6.html">Reading in Philippine History</a></h2>
+          <div class="announcement-small">NOTE: Details coming soon.</div>
         </div>
-
-        <div class="subject-box">
-            <h2><a href="subject2.html">UNDERSTANDING THE SELF</a></h2>
-            <div class="announcement-small">
-                NOTE:...
-            </div>
-        </div>
-
-        <div class="subject-box">
-            <h2><a href="subject3.html">THE CONTEMPORARY WORLD</a></h2>
-            <div class="announcement-small">
-                NOTE:...
-            </div>
-        </div>
-
-        <div class="subject-box">
-            <h2><a href="subject4.html">INTRODUCTION TO COMPUTING</a></h2>
-            <div class="announcement-small">
-                NOTE:...
-            </div>
-        </div>
-
-        <div class="subject-box">
-            <h3><a href="subject5.html">COMPUTER PROGRAMMING 1 (LEC & LAB)</a></h3>
-            <div class="announcement-small">
-                NOTE:...
-            </div>
-        </div>
-
-        <div class="subject-box">
-            <h2><a href="subject6.html">P.E 1</a></h2>
-            <div class="announcement-small">
-                NOTE:...
-            </div>
-        </div>
-
-        <div class="subject-box">
-            <h2><a href="subject7.html">MATHEMATICS IN THE MODERN WORLD</a></h2>
-            <div class="announcement-small">
-                NOTE:...
-            </div>
-        </div>
-
-        <div class="subject-box">
-            <h2><a href="subject8.html">GENERAL BIOLOGY</a></h2>
-            <div class="announcement-small">
-                NOTE: Drawing of plants and animals cell,and the added 2 activities
-            </div>
-        </div>
-
-        <div class="subject-box">
-            <h2><a href="subject9.html">FRESHMEN ORIENTATION FOR IS</a></h2>
-            <div class="announcement-small">
-                NOTE: Memorize Clarendon Vision and Mission
-                <a href="https://markdelin.github.io/vm.github.io/"><b style="color: red;"<>link</b></a>
-            </div>
-        </div>
-
-        <div class="other-announcements">
-            <h5>Other Announcements:</h5>
-            This program is currently under development and is not yet complete. Please check back later for updates.
-        </div>
-
-        <div class="class-sched-title">Class Sched:</div>
-
-        <div class="image-section">
-            <img src="sched.png" alt="Class Schedule Image">
-        </div>
-        <footer><h4>Created by Reymark</h4></footer>
+          <div class="card">
+            <h2><a href="subject7.html">Science, Technology & Society</a></h2>
+            <div class="announcement-small">NOTE: Details coming soon.</div>
+          </div>
+            <div class="card">
+        <h2><a href="subject8.html">Rhythmic Activities</a></h2>
+        <div class="announcement-small">NOTE: Details coming soon.</div>
+      </div>
+        <div class="card">
+        <h2><a href="subject9.html">LTS 2</a></h2>
+        <div class="announcement-small">NOTE: Details coming soon.</div>
+      </div>
     </div>
+
+    <div class="other-announcements">
+      <h5>Other Announcements:</h5>
+      <p>This website is under development. Stay tuned for updates!</p>
+    </div>
+
+    <!-- Schedule Box -->
+  
+    <div class="schedule">
+      <h2 style="text-align: center;">Schedule:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Days</th>
+            <th>Time</th>
+            <th>Subject Code</th>
+            <th>Subject</th>
+            <th>Room</th>
+            <th>Lecturer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Thu, Fri</td>
+            <td>9:30 AM - 11:00 AM</td>
+            <td>FIL 1</td>
+            <td>Retorica</td>
+            <td>Room 11, 3rd floor</td>
+            <td>Joshua Fallena</td>
+          </tr>
+          <tr>
+            <td>Thu, Fri</td>
+            <td>11:30 AM - 1:00 PM</td>
+            <td>IS 123</td>
+            <td>Quantitative Methods (Data Analysis)</td>
+            <td>TBA</td>
+            <td>Khate Angelica Ortiz</td>
+          </tr>
+          <tr>
+            <td>Thu, Fri</td>
+            <td>1:00 PM - 2:30 PM</td>
+            <td>GE 4</td>
+            <td>Reading in Philippine History</td>
+            <td>Room 2, 1st floor</td>
+            <td>Leslie Macuja</td>
+          </tr>
+          <tr>
+            <td>Thu, Fri</td>
+            <td>2:30 PM - 4:00 PM</td>
+            <td>NSTP 2</td>
+            <td>LTS 2</td>
+            <td>C9</td>
+            <td>Kristine Jane Alday</td>
+          </tr>
+          <tr>
+            <td>Thu, Fri</td>
+            <td>4:00 PM - 5:00 PM</td>
+            <td>P.E 2</td>
+            <td>Rhythmic Activities</td>
+            <td>TBA</td>
+            <td>Khista Niña Iyo</td>
+          </tr>
+          <tr>
+            <td>Sat</td>
+            <td>7:30 AM - 10:00 AM</td>
+            <td>IS 121</td>
+            <td>Computer Programming 2</td>
+            <td>College Comlab.</td>
+            <td>Roderick Mayo</td>
+          </tr>
+          <tr>
+            <td>Sat</td>
+            <td>1:00 PM - 4:00 PM</td>
+            <td>IS 122</td>
+            <td>Fundamentals of Information System</td>
+            <td>TBA</td>
+            <td>Aina Inocencio</td>
+          </tr>
+          <tr>
+            <td>Sat</td>
+            <td>4:00 PM - TBA</td>
+            <td>GE 5</td>
+            <td>Science, Technology & Society</td>
+            <td>TBA</td>
+            <td>Peter Salivio</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>© 2025 Designed and Developed by R.D.</footer>
+
+  <!-- JavaScript for Matrix Background -->
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, x) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, x * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[x] = 0;
+        }
+        drops[x]++;
+      });
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
-            </html
+
+                                                    </html>
