@@ -1,237 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <title>COMPUTER PROGRAMMING 1 (LEC & LAB)</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS Information Systems</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Open Sans', sans-serif;
-            color: white;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-b{
-  color: skyblue;
-}
-<h4>{
-  color: lime;
-}
-        h1 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.8em; /* Adjust title size */
-            margin-bottom: 20px;
-        }
+    .matrix-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: black;
+      overflow: hidden;
+    }
 
-        .content-section {
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-            text-align: left;
-            margin: 0 auto;
-            max-width: 100%;
-            margin-bottom: 40px; /* Add margin for space before back button */
-        }
+    .matrix-background canvas {
+      display: block;
+    }
 
-        .back-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-            transition: background-color 0.3s ease;
-        }
+    .container {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-        .back-button:hover {
-            background-color: #0056b3;
-        }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
-            }
-            h4{
-              color: #fa0063;
-            }
-            h3{
-              color: skyblue;
-              text-align: center;
-              .p{
-                font-size: 0.1em;
-              }
-            }
-            b{
-              color: #d0ff00;
-            }
+    .bsis-a {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
 
-            .back-button {
-                padding: 10px 20px;
-            }
-        }
-.center-image {
-            display: block;
-            margin: 0 auto;
-            width: 100px;
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.2em;
-            }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
 
-            .back-button {
-                padding: 8px 16px;
-            }
-        }
-    </style>
+    .card {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ff00;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 255, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 255, 0, 0.4);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      color: #00ff00;
+      text-align: center;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #00ff00;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      border: 2px solid #00ff00;
+    }
+  </style>
 </head>
+
 <body>
-<div id="content-to-capture">
-    <div class="container">
-        <h1>COMPUTER PRORAMMING 1 <h1>(LEC & LAB)</h1></h1>
-        <div class="content-section">
-            <p><h3>Reviewer in Computer Programming</h3></p>
-            <b>Flowchart</b> - represent the process.
-            <h4>Basic symbol of flowcharts</h4>
-            <li><b>Oval</b> (Terminator) -Indicates the start or end of a process.</li>
-            <img src="oval.png" alt="Centered Image" class="center-image">
-<li><b>Rectangle</b> (Process) - Represents a process, task, or action to be performed.</li>
-<img src="rectangle.png" alt="Centered Image" class="center-image">
-<li><b>Diamond</b> (Decision) - Represents a decision or branching point where the flow can take different paths based on a condition.</li>
-<img src="diamond.png" alt="Centered Image" class="center-image">
-<li><b>Parallelogram</b> (Input/Output) - Represents input (e.g., user input) or output (e.g., displaying results).</li>
-<img src="paral.png" alt="Centered Image" class="center-image">
-<li><b>Arrow</b> (Flow Line) Shows the direction of the flow from one step to another.</li>
-<img src="arrow.png" alt="Centered Image" class="center-image">
+  <div class="matrix-background">
+    <canvas id="matrix"></canvas>
+  </div>
 
-            <b>Algorithm</b> - step by step procedures.
-            <p><b style= "color: blue;">C++</b> was created by <b style= "color: red;">Bjarne Stroustrup</b> in <b>1979</b>.</p>
-            <p><b>Comments</b> - makes our code readable.</p>
-            <li>dubugging purposes.</li>
-            <li>code collaboration.</li>
-            <p><b>syntax</b> - used to write code.</p>
-            <p><b>variables</b> - memory location.</p>
-            <p><b>control structure</b> - flow of the program.</p>
-            <p><b>Literal</b> -  A data used for representing fixed values.</p>
-            <h4>Types of Literals</h4>
-            <p>1. <b>Integer Numeric Literals</b></p>
-            <li>Decimal (Base 10)</li>
-<li>Octal (Base 8)</li>
-<li>Hexadecimal (Base 16)</li>
-<p>2. <b>Floating-Point Literals</b></p>
-<li>Represent numbers with a decimal point.</li>
-<p>3. <b>Character Literals</b></p>
-<li>Single letters enclosed in single quotes: 'a'</li>
-<p>4. <b>String Literals</b></p>
-<li>Words or sentences enclosed in double quotes: "Hello"</li>
+  <div class="container">
+    <h1>BS Information Systems</h1>
+    <div class="bsis-a">BSIS-1A</div>
 
-<h3>Fundamental Data Types</h3>
-
-<p>1. <b style="color: red;">int</b> (Integer) - 2/4 bytes</p>
-<p>2. <b style="color: red;">float</b> (Floating-point) - 4 bytes</p>
-<p>3. <b style="color: red;">double</b> (Double floating-point) - 8 bytes</p>
-<p>4. <b style="color: red;">char</b>(Character) - 1 byte</p>
-<p>5. <b style="color: red;">wchar_t</b> (Wide character) - 2 bytes</p>
-<p>6. <b style="color: red;">bool</b> (Boolean) - Can store true or false</p>
-<p>7. <b style= "color: red;">void</b> - Represents an empty type</p>
-
-<h3 style="color: #0089ff;">C++ Data Types</h3>
-<p>1. <b style="color: #00ff96;">int</b> - 
-Can hold whole numbers.</p>
-<p>2. <b style="color:#00ff96;">double</b> - 
-Can hold numbers with decimals or in exponential notation.</p>
-<ul style="font-size: 0.8em;"><b style="color:#ff2400;">Ex.</b>
-45E10 (means 45 × 10^10)
-<ul>2E2 (means 2 × 10^2)</ul></ul>
-<p>3. <b style="color: #00ff96;">char</b>
- - Used to store single characters.</p>
-<ul style="font-size: 0.8em;">Ex. char name = 'c';
-<p>Ex. for a string: char name[10] = "Ericson";</p></ul>
-<p>4. <b style="color: #00ff96;">wchar_t
-</b> - Used for wide characters.
-<ul style="font-size:0.8em;">Ex. wchar_t text = L'C';</ul></p>
-<p>5. <b style="color: #00ff96;">bool</b>
- - Used to store boolean values (true or false).
-<ul style="font-size:0.8em;">Ex. bool cond = false;</ul></p>
-<p>6. <b style="color: #00ff96;">void</b>
- - Represents an empty value or no data.</p>
-
-<h3 style="color:#ff5c00;">Modifiers</h3>
-<p><b style="color: #dc80ffcd;">signed</b> - Can hold positive and negative values.</p>
-<p><b style="color: #dc80ffcd;">unsigned</b> - Can only hold positive values.</p>
-<p><b style="color: #dc80ffcd;">short</b>   - 2 bytes (range: -32,768 to 32,767)</p>
-<p><b style="color: #dc80ffcd;">unsigned short</b> - 2 bytes (range: 0 to 65,535)</p>
-
-<p><b style="color: #dc80ffcd;">long</b>  - Used for larger integers.</p>
-
-<p><b style="color: #dc80ffcd;">unsigned long</b> - Positive large integers.</p>
-
-<p><b style="color: #dc80ffcd;">long long </b> - Very large integers.</p>
-
-<p><b style="color: #dc80ffcd;">unsigned long long</b> - Positive very large integers.</p>
-
-<p><b style="color: #dc80ffcd;">long double </b> - Used for large floating-point numbers (12 bytes).</p>
-
-<p><b style="color: #dc80ffcd;">signed char</b> - Range from -128 to 127.</p>
-
-<p><b style="color: #dc80ffcd;">unsigned char </b> - Range from 0 to 255.</p>
-
-<h3 style="color:#80f9ffcd;">Constants</h3>
-
-<p>Constants are values that do not change.</p>
-<ul style="font-size:0.8em;">
-<p>Ex. const double PI = 3.14;</p>
-<p>const int MAGIC_NUMBER = 42;</p>
-<p>Note: Constants should be capitalized by naming convention.</p></ul>
-
-<h3 style="color: red;">Operators</h3>
-
-<p>1. <b style="color: #c2ff22">Addition</b> (+)
- - Adds two numbers.</p>
-<li>Ex. 5 + 3 results in 8.</li>
-
-<p>2. <b style="color: #c2ff22">Subtraction</b> (-)
- - Subtracts one number from another.</p>
-<li>Ex. 7 - 2 results in 5.</li>
-
-<p>3. <b style="color: #c2ff22">Multiplication</b> (*)
- - Multiplies two numbers.</p>
-<li>Ex. 6 * 4 results in 24.</li>
-
-<p>4. <b style="color: #c2ff22">Division </b>(/)
- - Divides one number by another.</p>
-<li>Ex. 8 / 2 results in 4.</li>
-<p>5. <b style="color: #c2ff22">Modulo</b> (%)
- - Used for finding the remainder when dividing two numbers.</p>
-
-<li>Ex. 10 % 3 results in 1 (since 3 goes into 10 three times, leaving a remainder of 1).</li>
-
-</div>
-    
-
-        </div>
-        <p style="text-align: center"><a href="index.html" class="back-button">&lt; Back to Main</a></p>
+    <div class="cards-container">
+      <div class="card">
+        <h2><a href="#">Subject Name</a></h2>
+        <p>Details coming soon.</p>
+      </div>
     </div>
+  </div>
+
+  <footer>© 2025 Designed and Developed by R.D.</footer>
+
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, x) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, x * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[x] = 0;
+        }
+        drops[x]++;
+      });
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
+
 </html>
