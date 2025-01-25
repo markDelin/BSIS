@@ -1,301 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NSTP 1</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subject Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Open Sans', sans-serif;
-            color: white;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
+    /* MATRIX BACKGROUND */
+    .matrix-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: black;
+      overflow: hidden;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
+    .matrix-background canvas {
+      display: block;
+    }
 
-        h1 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.8em; /* Adjust title size */
-            margin-bottom: 20px;
-        }
+    /* Blurred background */
+    .matrix-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      filter: blur(10px);
+      z-index: -1;
+    }
 
-        .content-section {
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-            text-align: left;
-            margin: 0 auto;
-            max-width: 100%;
-            margin-bottom: 40px; /* Add margin for space before back button */
-        }
+    .container {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-        .back-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-            transition: background-color 0.3s ease;
-        }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
 
-        .back-button:hover {
-            background-color: #0056b3;
-        }
+    .subject-title {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #00ff00;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
-            }
+    .back-button {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: black;
+      background-color: #00ff00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      width: fit-content;
+    }
 
-            .back-button {
-                padding: 10px 20px;
-            }
+    .back-button:hover {
+      background-color: #00cc00;
+    }
 
-        }
+    /* Tutorial Section */
+    .tutorial-section {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 2px solid #00ff00;
+    }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.2em;
-            }
-.image-container {
-            display: flex;
-.image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0; /* Adjust margin for better spacing */
-        }
+    .tutorial-section details {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
 
-        .image-container img {
-            width: 100%;
-            max-width: 300px; /* Control max width to avoid overflow */
-            height: auto;
-            aspect-ratio: 21 / 9;
-            object-fit: cover;
-            border-radius: 8px; /* Optional: add some rounding for aesthetics */
-        }
-            .back-button {
-                padding: 8px 16px;
-            }
-        }
-    </style>
+    .tutorial-section summary {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #00ff00;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      margin-top: 30px;
+      border: 2px solid #00ff00;
+    }
+
+    .spacer {
+      height: 300px;
+    }
+
+    .additional-info {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #00ff00;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 2px solid #00ff00;
+    }
+
+    .notice {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ff0000;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      border: 2px solid #ff0000;
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1 style="color: skyblue;">NSTP 1</h1>
-        <div class="content-section">
-         <h4 style="color: yellowgreen;">LESSON I</h4>
+  <!-- Matrix Background -->
+  <div class="matrix-background">
+    <canvas id="matrix"></canvas>
+    <!-- Blurred Overlay -->
+    <div class="matrix-overlay"></div>
+  </div>
 
-<h4 style="color: orange;">NSTP-CWTS/LTS Curricular Program</h4>
+  <div class="container">
+    <h1>BS Information Systems</h1>
+    <div class="subject-title">Computer Programming 2</div>
 
-<h4 style="color: skyblue;">Objective:</h4>
-<h5 style="color: skyblue;">At the end of the lesson, the students are expected to:</h5>
-<p>gain knowledge on the provisions and policies of the Republic Act No. 9163-the NSTP Act of 2001;</p>
-<p>
-➤ apply the NSTP Carricular Program and other related in and off- campus services and activities;
-</p>
-<p>
-➤ explain the guidelines for the National Service Reserve Corps (NSRC) with prospect to its mission, functions, and organizations;
-</p>
-<p>
-➤ implement the NSTP Course Program based on the designed instructional program for one semester coverage.</p>
+    <!-- Back to Main Page Button -->
+    <a href="index.html" class="back-button">Back to Main Page</a>
 
-<h4 style="color: skyblue;">1. Introduction</h4>
-<p>
-The Civic Welfare Training Service (CWTS) and the Literacy Training Service (LTS) of the National Service Training Program (NSTP) lessons include both lectures and practicum. The lectures are usually held at the university lecture hall while the practicums are conducted at the adopted target communities. The activities given during the practicum must be related to community extension projects and services.
-</p>
-<h4 style="color: skyblue;">Lesson I is an introductory lecture about:</h4>
-<p>
-• the coverage of the syllabus of NSTP Curricular Program for CWTS and LTS;
-
-•Republic Act No. 9163-the NSTP Act of 2001;</p>
-<p>
-• Implementing Rules and Regulations (IRR) of the NSTP Act of 2001;</p>
-<p>
-• CWTS/LTS Network Flowchart, Guidelines for the Establishment of the National Service Reserve Corps (NSRC); and
-
-the NSTP-CWTS/LTS Program Design Flowchart.
-</p>
-<p>
-The CWTS and LTS are two of the three components of the National Service Training Program. These are offered for two (2) semesters as a three (3) unit subject for CWTS/LTS-1 and CWTS/LTS-2 respectively. These subjects are requirements for a baccalaureate degree for both male and female students. The curricular program is designed to encourage the youth to contribute in improving the general welfare and the quality of Filipino life. The students are required to carry out projects and services contributory to the general welfare and betterment of life of community people as embodied under the objectives and program of instructions of the curricular program.
-</p>
-<p>
-The students taking the CWTS and LTS are expected to learn and acquire the values and skills in Community Organization and Development through Management, Empowerment, and Social Mobilization. The training program aims to develop and improve oneself as a community leader and implementer of the Civic Welfare Programs and Services as mandated by the NSTP under the Republic Act No. 9163 and the Implementing Rules and Regulations (IRR) of the Commission on Higher Education (CHED), Department of National Defense
-</p>
-<p>
-(DND), and Technical Education and Skills Development Authority (TESDA).</p>
-
-<h4 style="color: yellowgreen;">II. A Primer on the Nationai Service Training Program (NSTP) Act of 2001</h4>
-<h4 style="color: skyblue;">
-A. What is the National Service Training Program (NSTP) law?</h4>
-<p>
-The National Service Training Program (NSTP) law or Republic Act 9163 is a program aimed at enhancing civic consciousness and defense preparedness in the youth by developing the ethics of service and patriotism while undergoing training in any of its three (3) program components, specifically designed to enhance the youth's active contribution to the general welfare of Filipinos</p>
-<h4 style="color: skyblue;">
-B. What are the program components of the NSTP?
-</h4>
-<p>
-First is the "Reserve Officers Training Corps" (ROTC) which is designed to provide military training to tertiary level students in order to motivate, train, organize, and mobilize them for national defense
-preparedness.
-</p>
-<p>
-Second is the "Literacy Training Service (LTS)" which is designed to train the students to teach literacy and numeracy skills to children, out-of-school youth and other segments of society in need of their services.</p>
-<p>
-Third is the "Civic Welfare Training Service (CWTS</mark)" which refers to activities contributory to the general welfare and the betterment of life for the members of the community or the enhancement of its facilities, especially those devoted to improving health, education, environment
-entrepreneurship, safety, recreation and moral of the citizenry and other social welfare services.</p>
-
-<h4 style="color: skyblue;">C. Who shall take the NSTP?</h4>
-<p>
-All incoming freshmen students, male and female, enrolled in any baccalaureate and in at least two (2)-year technical-vocational or associate courses, are required to complete one (1) NSTP component of their choice, as a graduation requirement.
-</p>
-<h4 style="color: skyblue;">D. Since when has the NSTP been implemented?
-</h4>
-<p>The NSTP has been implemented since the start of school year 2002- 2003.
-</p>
-<h4 style="color: skyblue">E. How is the NSTP taken up?</h4>
-<p>
-Each of the NSTP components is undertaken for an academic period of two (2) semesters and is credited for three (3) units per semester with fifty-four (54) to ninety (90) training hours per semester.</p>
-
-<h4 style="color: skyblue;">F. What if I cannoi take the NSTP during the regular semester?</h4>
-<p>
-A one-summer program in lieu of the two (2)-semester program may be designed, formulated, and adopted by (DND), (CHED), and (TESDA). subject to the capability of the school and the Armed Forces of the Philippines (AFP) to handle the same.</p>
-
-<h4 style="color: style;">G. What if the NSTP component of my choice is not offered in my school?</h4>
-<p>
-Schoois that do not meet the required number of students in order to conduct a program component or do not offer the component chosen by their students shall allow the students to cross enroll to other schools, irrespective of whether that school is under CHED or TESDA; and for the ROTC, whether they are managed by different AFP Branches of Service.
-</p><p  >
-These students, however, shall be subjected to the existing rules and regulations of their school of origin and the accepting school.
-</p>
-<h4 style="color: skyblue;">H. Are currently-enrolled students covered by the NSTP law?</h4>
-<p>
-Male students currently enrolled but have not taken any program component of the previous Expanded ROTC (E-ROTC)/National Service Program (NSP) are covered by the NSTP.</p>
-
-<h4 style="color: skyblue;">I. Will a student who has completed all his academic requirements except ROTC be allowed to graduate?</h4>
-<p>
-A student who has completed all his academic requirements except for ROTC will be allowed to graduate provided that he is a certified candidate by the school on or before the effectivity of the NSTP which is on March 23, 2002.</p>
-
-<h4 style="color: skyblue;">J. What if a male student has completed two (2) semesters of the E-ROTC/NSP?</h4>
-<p>
-He is deemed to have complied with the NSTP requirement.</p>
-
-<h4 style="color: skyblue;">K. What if a male student has taken only one (1) semester of Basic ROTC or E-ROTC/NSP?</h4>
-<p>
-He shall take one more semester of any of the NSTP components to qualify for graduation.
-</p>
-<h4 style="color: skyblue;">L. What will become of NSTP graduates?</h4>
-<p>Graduates of the non-ROTC components shall belong to the National Service Reserve Corps (NSRC) which could be tapped by the State for literacy and civic welfare activities. Graduates of the ROTC component shall form part of the AFP Citizen Armed Force, subject to DND requirements.</p>
-
-<h4 style="color: skyblue;">M. How can a student continue to qualify for enlistment in the AFP reserve force?</h4>
-<p>
-He/She may qualify for enlistment in the AFP reserve fcrce as long as he/she has completed the two (2) semesters of basic ROTC.</p>
-
-<h4 style="color: skyblue;">N. How much fee will be charged for an NSTP component?</h4>
-<p>
-No fees shall be collected for any of the NSTP components except basic tuition fees which should not be more than fifty (50%) percent of the charges of the school per academic unit.</p>
-
-<h4 style="color: skyblue;">O. Are there any student incentives provided for by the NSTP?</h4>
-<h4 style="color: limegreen">
-The following incentives are to be provided to students when they take up NSTP.</h4>
-<p>
-a. a program of assistance/incentives for ROTC students from DND which will be in accordance with existing laws and regulations
-
-and subject to the availability of funds;</p>
-<p>
-b. a team of school authorities concerned, CHED and TESDA which shall ensure that health and accident group insurances are provided to students enrolled in any of the NSTP components; and</p>
-<p>
-c. a Special Scholarship Program for qualified NSTP students which shall be administered by CHED and TESDA subject to the availability of funds.</p>
-
-<h4 style="color: skyblue;">P. Who is responsible in supervising the NSTP to students?</h4>
-<p>
-School authorities shall exercise academic and administrative supervision over the design, formulation, adoption, and implementation of the different NSTP components in their respective schools.</p>
-<p>
-In the case of ROTC, the school authorities and DND shall exercise joint supervision over its implementation.</p>
-
-<h4 style="color: skyblue;">Q. What lead agencies will monitor the implementation of the NSTP?</h4>
-<p>
-CHED regional offices, TESDA provincial and district offices and DND- AFP through major service reserve commands and their ROTC units shall oversee and monitor the implementation of the NSTP under their respective jurisdiction to determine if the trainings conducted are in consonance with RA 9163.</p>
-
-<h4 style="color: skyblue;">R. Is the NSTP available in all schools and universities?</h4>
-<p>
-All higher and technical-vocational educational institutions offer at least one (1) of the NSTP components while State universities and colleges offer the ROTC component and at least one other NSTP component. Private schools that have at least 350 student cadets offer the ROTC component through its Department of Military Science and Tactics (DMST).
-</p>
-<h3 style="color: yellowgreen;">III. Guidelines for the Establishment of the National Service Reserve Corps (NSRC)<h3>
-
-<h4 style="color: skyblue;">A. Background</h4>
-<p>
-Section 11 of RA 9163 or the National Service Training Program Act of 2001 specifically provides for the creation of a National Reserve Corps (NSRC), composed of graduates of the non-ROTC Components: the Civic Welfare Training Service (CWTS) and Literacy Training Service (LTS). Members of this Corps may be tapped by the State for literacy and civie welfare activities, through the joint efforts of DND, CHED, and TESDA.</p>
-
-<h4 style="color: skyblue;">B. The National Service Reserve Corps (NSRC)</h4>
-
-<h4 style="color: skyblue;">1. Mission</h4>
-<p>
-To provide a trained and motivated manpower pool that can be tapped by the State for civic welfare, literacy, and other similar endeavors in the service of nation. udalla
-</p>
-<h4 style="color: skyblue">2. Functions</h4>
-<p>
-a.) To assist in the disaster preparedness, mitigation, response, and rehabilitation programs
-</p>
-<p>
-b.) To serve as an auxiliary to the Disaster Coordinating Council (DCC) response units
-</p>
-<p>
-c.) To assist in the promotion of civic welfare activities d.) To assist in the implementation of literacy programs</p>
-
-<p>e.) To assist in socioeconomic development
-</p>
-<p  >f.) To assist in environmental protection
-</p>
-<p>g.) To perform other similar endeavors
-</p>
-<h4 style="color: skyblue;">3. Composition</h4>
-<p>
-The NSRC shall be composed of the graduates of CWTS and LTS components of the NSTP.
-</p>
-<h4 style="color: skyblue;">4. Organization</h4>
-<p>
-The NSRC is organized under the umbrella of the National Disaster Coordinating Council (NDCC). It shall have a national, regional. provincial, and city/municipal level of organization parallel to the Disaster Coordinating Council (DCC) structures at all levels. The DCC centers shall serve as the headquarters of the NSRC at the respective level organization. Its National Center shall be based at the NDCC Disaster Preparedness Center, Camp General Emilio Aguinalde, Quezon City. A Secretariat at all levels shall be organized and composed of representatives from CHED and TESDA.</p>
-<h4 style="color: skyblue;">
-5. Inter-Agency Relationship of the NSRC Concerned Agencies</h4>
-
-<div class="image-container">
-        <img src="q.png" alt="Description of image">
+    <!-- Additional Information Section -->
+    <div class="additional-info">
+      <h2>Important Information</h2>
+      <p>Before diving into the tutorials, make sure to review the basics of programming. This section provides an introduction to Java, including its setup and core concepts.</p>
     </div>
-    
-<p>
-(<mark>RDCC</mark>) Regional Disaster Coordinating Council
-</p> <p >
-(<mark>PDCC</mark>) Provincial Disaster Coordinating Council
-</p>
-<p>(<mark>CDCC</mark>) City Disaster Coordinating Council</p>
-<p>(<mark>MDCC</mark>) Municipal Disaster Coordinating Council</p>
-<p>(<mark>BDCC</mark>) Barangay Disaster Coordinating Council</p>
-<p>(<mark>(CHEDRO)</mark>) CHED Regional Office</p>
-<p>(<mark>OFD</mark>) Office of Civil Defense</p>
-<p>(<mark>TESDA RO</mark>) TESDA Regional Office</p>
-<p>(<mark>TESDA PO</mark>) TESDA Provincial Office</p>
-<p>(<mark>HEI</mark>) Higher Education Institution</p>
-    <p>(incomplete)</p>
-        </div>
-        <a href="index.html" class="back-button">&lt; Back to Main</a>
+
+    <!-- Tutorial Section -->
+    <div class="tutorial-section">
+      <details>
+        <summary>Video 1: JDK, IDE and Hello World</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/8HXqOHH2ocM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 2: Java Variables and Data Types</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/lePkYEGt2es" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 3: User inputs and Arithmetic Operators</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/76b2d6ozN_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 4: Arrays</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LzeUR6JJBZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 5: Conditional Statements</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/m8Qo5vT-5MY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 6: Switch Statements</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Px3J6ZdDqls" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 7: While & Do - While Loop</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/WX978uCVAkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 8: For Loop</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/re6AlB8AciI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 9: For - Each Loop</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/rGVpVP9o6ps" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
+      <details>
+        <summary>Video 10: 2D Arrays + Nested For Loops</summary>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/zC8R_JXiqDs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </details>
     </div>
+
+    <!-- Notice about ongoing video addition -->
+    <div class="notice">
+      <p>Note: Additional videos are being added to this page. Stay tuned!</p>
+    </div>
+
+  <footer>© 2025 Designed and Developed by R.D.</footer>
+
+  <!-- JavaScript for Matrix Background -->
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, x) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, x * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[x] = 0;
+        }
+        drops[x]++;
+      });
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
-    </html>
+
+</html>
