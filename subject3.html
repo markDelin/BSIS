@@ -1,132 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE CONTEMPORARY WORLD</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS Information Systems</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Open Sans', sans-serif;
-            color: white;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
+    .matrix-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: black;
+      overflow: hidden;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
+    .matrix-background canvas {
+      display: block;
+    }
 
-        h1 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.8em; /* Adjust title size */
-            margin-bottom: 20px;
-        }
+    .container {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-        .content-section {
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-            text-align: left;
-            margin: 0 auto;
-            max-width: 100%;
-            margin-bottom: 40px; /* Add margin for space before back button */
-        }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
 
-        .back-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-            transition: background-color 0.3s ease;
-        }
+    .bsis-a {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
 
-        .back-button:hover {
-            background-color: #0056b3;
-        }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
-            }
+    .card {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ff00;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 255, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-            .back-button {
-                padding: 10px 20px;
-            }
-        }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 255, 0, 0.4);
+    }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.2em;
-            }
+    .card h2 {
+      font-size: 1.2rem;
+      color: #00ff00;
+      text-align: center;
+    }
 
-            .back-button {
-                padding: 8px 16px;
-            }
-        }
-    </style>
+    .card a {
+      text-decoration: none;
+      color: #00ff00;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      border: 2px solid #00ff00;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>THE CONTEMPORARY WORLD</h1>
-        <div class="content-section">
-  <h2 style="color: skyblue;">Unit 1. Introduction: Contemporary World</h2>
+  <div class="matrix-background">
+    <canvas id="matrix"></canvas>
+  </div>
 
-  <h3 style="color: lime;">Learning Objectives:</h3>
-  <h6><a href="download.html"><span style="color: red;">click here</span></a> to download the file.</h6>
-  <p>To have a deeper understanding about interpretations, emergence, and issues confronting the nation-state about <span style="color: skyblue;">Globalization</span>.</p>
-  <p>To be able to analyze contemporary news events and global issues in relation to <span style="color: skyblue;">Filipinos</span> and the <span style="color: skyblue;">Philippines</span>.</p>
+  <div class="container">
+    <h1>BS Information Systems</h1>
+    <div class="bsis-a">BSIS-1A</div>
 
-  <h3 style="color: lime;">What is contemporary world?</h3>
-  <p>The contemporary world refers to the circumstances and ideas of the present age, or what we call the modern age. It deals with problems and issues related to the <span style="color: skyblue;">environment</span>, <span style="color: skyblue;">population</span>, <span style="color: skyblue;">wealth</span>, <span style="color: skyblue;">power</span>, and <span style="color: skyblue;">tensions and conflicts</span>.</p>
-
-  <p>The term <span style="color: skyblue;">GLOBALIZATION</span> is widely used and names the shape of our contemporary world. It means we are now living in a deeply and increasingly interconnected, mobile, and hasty society driven by technology. Globalization is the name of our contemporary world-society since the early 1990s.</p>
-
-  <h3 style="color: lime;">What is globalization in contemporary world?</h3>
-  <p><span style="color: skyblue;">Globalization</span> is a term used to describe how trade and technology have made the world into a more connected and interdependent place. Globalization also captures the economic and social changes that have come about as a result.</p>
-
-  <h3 style="color: lime;">The Four Defining Elements of Globalization:</h3>
-  
-  <h4 style="color: orange;">Integration in Globalization</h4>
-  <p>International integration implies the adoption of policies by separate countries as if they were a single political unit. The degree of integration is often tested by seeing whether <span style="color: skyblue;">interest rates</span> or <span style="color: skyblue;">share prices</span> or the <span style="color: skyblue;">prices of goods</span> are the same in different national markets.</p>
-  <p>For example, many new markets like <span style="color: skyblue;">insurance</span>, <span style="color: skyblue;">transportation</span>, and <span style="color: skyblue;">banking services</span> have grown due to it. Furthermore, people now have access to more choices and international brands because of free trade between countries.</p>
-  <p>More specifically, <span style="color: skyblue;">economic integration</span> typically leads to a skyblueuction in the cost of trade, improved availability of goods and services, and a wider selection of them, and gains in efficiency that lead to greater purchasing power.</p>
-  <p>Globalization of <span style="color: skyblue;">product</span> and <span style="color: skyblue;">financial markets</span> refers to an increased economic integration in specialization and economies of scale, which will result in greater trade in financial services through both capital flows and cross-border entry activity.</p>
-
-  <h4 style="color: orange;">Interdependence in Globalization</h4>
-  <p><span style="color: skyblue;">Interdependence</span> refers to two or more countries that impact and rely on each other, while globalization is the economic, social, and political interaction and integration of people in different areas of the world. Nowadays, most nations are interdependent and related in a globalized world.</p>
-  <p>In other words, it is mutual dependence at a worldwide level. One nation depends on another for something. That country also depends on another for either the same thing or something else. As more countries depend on other nations for things, especially key things like <span style="color: skyblue;">energy</span> and <span style="color: skyblue;">food</span>, global interdependence evolves.</p>
-  <p>Globalization is inextricably linked with interdependence since the available resources are unequally distributed across the world, and for that matter, no country can claim to be fully served with regard to all the resources it needs to be totally self-sufficient.</p>
-
-  <h4 style="color: orange;">State Erosion in Globalization</h4>
-  <p>The entry and the increased role of the multinational companies all over the world leads to a skyblueuction in the capacity of the government to take decisions on their own, thus skyblueucing state capacity.</p>
-  <p>This is the resultant effect of the processes of globalization and global transformation. The changes inherent in the international system have adversely impacted states by gradually eroding their sovereignty and effectiveness.</p>
-  <p>Globalization has changed the role of the state in many ways: politically through interdependence and independence of states, socially through the problems and threats of <span style="color: skyblue;">terrorism</span> and <span style="color: skyblue;">deadly diseases</span>, technologically through the media and internet, and economically through the change from national to global economies.</p>
-
-  <h4 style="color: orange;">Transnational Power in Globalization</h4>
-  <p><span style="color: skyblue;">Transnational globalization</span> is defined here as a set of actors and systems which are not shaped by specific national interests, territories, and standards, and which operate globally. Transnational processes, on the other hand, are anchoskyblue in and transcend one or more nation-states.</p>
-  <p>Transnational corporations (TNCs) are playing a key role in the ongoing globalization process. Their strategies largely determine volume and nature of trade flows, foreign direct investments, and financial flows. The determinants of these strategies are themselves rather complex.</p>
-  <p>Transnational corporations (TNCs) or multinational corporations (MNCs) are companies that operate in more than one country. Unilever, McDonald’s, and Apple are all examples of TNCs.</p>
-        </div>
-        <a href="index.html" class="back-button">&lt; Back to Main</a>
+    <div class="cards-container">
+      <div class="card">
+        <h2><a href="#">Subject Name</a></h2>
+        <p>Details coming soon.</p>
+      </div>
     </div>
+  </div>
+
+  <footer>© 2025 Designed and Developed by R.D.</footer>
+
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, x) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, x * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[x] = 0;
+        }
+        drops[x]++;
+      });
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
-      </html>
+
+</html>
