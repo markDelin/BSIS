@@ -1,158 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNDERSTANDING THE SELF</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS Information Systems</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Open Sans', sans-serif;
-            color: white;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
+    .matrix-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: black;
+      overflow: hidden;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
+    .matrix-background canvas {
+      display: block;
+    }
 
-        h1 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.8em; /* Adjust title size */
-            margin-bottom: 20px;
-        }
+    .container {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-        .content-section {
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-            text-align: left;
-            margin: 0 auto;
-            max-width: 100%;
-            margin-bottom: 40px; /* Add margin for space before back button */
-        }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
 
-        .back-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-            transition: background-color 0.3s ease;
-        }
+    .bsis-a {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
 
-        .back-button:hover {
-            background-color: #0056b3;
-        }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
 
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0; /* Adjust margin for better spacing */
-        }
+    .card {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ff00;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 255, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        .image-container img {
-            width: 100%;
-            max-width: 300px; /* Control max width to avoid overflow */
-            height: auto;
-            aspect-ratio: 21 / 9;
-            object-fit: cover;
-            border-radius: 8px; /* Optional: add some rounding for aesthetics */
-        }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 255, 0, 0.4);
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
-            }
+    .card h2 {
+      font-size: 1.2rem;
+      color: #00ff00;
+      text-align: center;
+    }
 
-            .back-button {
-                padding: 10px 20px;
-            }
-        }
+    .card a {
+      text-decoration: none;
+      color: #00ff00;
+    }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.2em;
-            }
+    .card a:hover {
+      text-decoration: underline;
+    }
 
-            .back-button {
-                padding: 8px 16px;
-            }
-
-            .image-container img {
-                max-width: 200px; /* Reduce max width on smaller screens */
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      border: 2px solid #00ff00;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>UNDERSTANDING THE SELF</h1>
-        <div class="content-section">
-          <div><h5 style="color: lime;">Reviewer for UNDERSTANDING THE SELF</h5></div>
-            <p style="color: Orange"><b>FOR IDENTIFICATION</b></p>
-            <p><b style="color: skyblue;">Sigmund Freud</b> - the most influential psychologist saw the self as its mental processes, and one’s behavior as the result of the interaction between the “<b style="color: skyblue;">Id</b>” “<b style="color: skyblue;">Ego</b>” and “<b style="color: skyblue;">SuperEgo</b>”.</p>
-            <p><b style="color: skyblue;">Personne</b> has much to do with what it means to live in particular institution, a particular family, a particular religion, a particular nationality, and how given expectations and influences from others.</p>
-            <p><b style="color: skyblue;">Moi</b> is person’s Basic identity. It refers to a person’s sense of who he is, his body, and his basic identity, his biological givenness.</p>
-            <p><b style="color: skyblue;">Marcel Mauss</b>, French Anthropologist says that every self has two faces, the Personne and Moi.</p>
-            <p><b style="color: skyblue;">Gender</b> has to be personally discovered and asserted and not dictated by culture and society.</p>
-            <p><b style="color: skyblue;">Lev Semyonovich Vygotsky</b> - was a Russian psychologist, known for his work on psychological development in children.</p>
-            <p><b style="color: skyblue;">Identity</b> is composed of personal characteristics, social roles, and responsibilities, as well as affiliations that define who one is.</p>
-            <p><b style="color: skyblue;">Ought Self</b> - is who you think you should be.</p>
-            <p><b style="color: skyblue;">Narcissism</b> - is a trait characterized by overly high self-esteem, self-admiration, and self-centeredness.</p>
-            <p><b style="color: skyblue;">Self Concept</b> is what basically comes to your mind when you are asked about who you are.</p>
-            <p><b style="color: skyblue;">William James</b> - was one of the earliest psychologists to study the self and conceptualized the self as having two aspects, the “I” and “me”.</p>
-            <p><b style="color: skyblue;">Actual Self</b> - is who you are at the moment.</p>
-            <p><b style="color: skyblue;">Ideal Self</b> - is who you like to be.</p>
-            <p><b style="color: skyblue;">Downward Social Comparison</b> - is the more common type of comparing ourselves to others. As the name implies, we create a positive self-concept by comparing ourselves with those who are worse off than us.</p>
-            <h2>ESSAY</h2>
-            <p><strong style="color: skyblue;">What is Id, Ego, and Super Ego?</strong></p>
-           <div class="image-container">
-                <img src="ss.png" alt="Description of image">
-            </div>
-            <p>The <b style="color: red;">Id</b> is the primitive and instinctive component of personality.</p>
-            <p>Freud’s <b style="color: red;">Ego</b> is the rational part of the psyche that mediates between the instinctual desires of the id and the moral constraints of the superego, operating primarily at the conscious level.</p>
-            <p>Freud’s <b style="color: red;">Superego</b> is the moral component of the psyche, representing internalized societal values and standards. It contrasts with the id’s desires, guiding behavior towards moral righteousness and inducing guilt when standards aren’t met.</p>
-            <p><strong style="color: skyblue;">Explain Downward Social Comparison.</strong></p>
-            <p><b>Downward Social Comparison</b> - is the more common type of comparing ourselves to others. As the name implies, we create a positive self-concept by comparing ourselves with those who are worse off than us.</p>
-            <p><strong style="color: skyblue;">>Differentiate Moi and Personne.</strong></p>
-            <p>Personne has much to do with what it means to live in a particular institution, a particular family, a particular religion, a particular nationality, and how given expectations and influences from others.</p>
-            <p>Moi is a person’s Basic identity. It refers to a person’s sense of who he is, his body, and his basic identity, his biological givenness.</p>
-            <h3>Additional Reviewer:</h3>
-            <p><b style="color: skyblue;">George Herbert Mead</b>- American philosopher and social theorist.
-              <b style="color: skyblue;">Argued</b> that the self is created and  develop through human interaction.</p>
-              <p><b style="color: skyblue;">Self-awareness</b>- also present us with at least three self-schema</p>
-              <p><b style="color: skyblue;">Social Comparison Theory</b>- we learn about ourselves, the appropriateness of our behavior </p>
-              <p><b style="color: skyblue;">Carl Rogers</b>- theory of personality also used the same terms,
-<b style="color: skyblue;">"I"</b>- as one who acts  and decide
-<b style="color: skyblue;">"me"</b>- is what you think or feel about yourself as an object</p>
-              <p><b style="color: skyblue;">Social Interaction and Group Affiliation</b>- are vital factors in creating our social-concept especially in the aspect of voiding us with our social identity</p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-              <p></p>
-        </div>
-        <a href="index.html" class="back-button">&lt; Back to Main</a>
+  <div class="matrix-background">
+    <canvas id="matrix"></canvas>
+  </div>
+
+  <div class="container">
+    <h1>BS Information Systems</h1>
+    <div class="bsis-a">BSIS-1A</div>
+
+    <div class="cards-container">
+      <div class="card">
+        <h2><a href="#">Subject Name</a></h2>
+        <p>Details coming soon.</p>
+      </div>
     </div>
+  </div>
+
+  <footer>© 2025 Designed and Developed by R.D.</footer>
+
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, x) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, x * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[x] = 0;
+        }
+        drops[x]++;
+      });
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
+
 </html>
