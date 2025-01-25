@@ -1,513 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTRODUCTION TO COMPUTING</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BS Information Systems</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #1e1e1e;
-            background-image: url('background-image (1).jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: 'Open Sans', sans-serif;
-            color: white;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
+    .matrix-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: black;
+      overflow: hidden;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
+    .matrix-background canvas {
+      display: block;
+    }
 
-        h1 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.8em; /* Adjust title size */
-            margin-bottom: 20px;
-        }
+    .container {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
 
-        .content-section {
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 8px;
-            text-align: left;
-            margin: 0 auto;
-            max-width: 100%;
-            margin-bottom: 40px; /* Add margin for space before back button */
-        }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
 
-        .back-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-            transition: background-color 0.3s ease;
-        }
+    .bsis-a {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #00ff00;
+      margin-bottom: 20px;
+    }
 
-        .back-button:hover {
-            background-color: #0056b3;
-        }
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.5em;
-            }
+    .card {
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ff00;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 255, 0, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-            .back-button {
-                padding: 10px 20px;
-            }
-        }
-h3 {
-            color: #fffffff2;
-        }
-        h5 {
-            color: violet;
-        }
-        h4 {
-          color: #00ffd2;
-          text-align: center;
-        }
-        .skyblue{
-          color:skyblue;
-        }
-        b{
-          color: yellow;
-        }
-        .highlight-skyblue {
-            color: skyblue;
-        }
-        tr{
-          font-size: 0.1em;
-        }
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.2em;
-            }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 255, 0, 0.4);
+    }
 
-            .back-button {
-                padding: 8px 16px;
-            }
-        }
-    </style>
+    .card h2 {
+      font-size: 1.2rem;
+      color: #00ff00;
+      text-align: center;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #00ff00;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #00ff00;
+      border: 2px solid #00ff00;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>INTRODUCTION TO COMPUTING</h1>
-        <div class="content-section">
-            <h3>Module 1 <p><b>Introduction to the
-Profession</b></p></h3>
-    
-    <h3>Summary:</h3>
-    
-    <p><span class="highlight-skyblue">Computer Science (CS)</span>: Focuses on the theoretical foundations of computing, algorithm development, and software design. CS professionals create complex software and solve computing problems.</p>
-
-    <p><span class="highlight-skyblue">Information Systems (IS)</span>: Deals with the application of information technology to organizations. IS professionals implement information systems to achieve competitive advantages.</p>
-
-    <p><span class="highlight-skyblue">Information Technology (IT)</span>: Involves the practical use of hardware and software to address organizational needs. IT professionals plan, install, and manage IT infrastructure.</p>
-
-    <h3>Careers in the Computer Industry</h3>
-
-    <p><span class="highlight-skyblue">CS</span>: Software engineer, systems analyst, data analyst, research and development, quality assurance specialist, software support specialist, applications software developer, computer programmer.</p>
-
-    <p><span class="highlight-skyblue">IS</span>: Organizational process analyst, data analyst, solutions specialist, quality assurance specialist, systems analyst, IS project management personnel.</p>
-
-    <p><span class="highlight-skyblue">IT</span>: Web and applications developer, systems analyst, junior database administrator, systems administrator, network engineer, junior information security administrator, systems integration personnel, IT audit assistant, technical support specialist.</p>
-
-    <h3>List of Certifications</h3>
-
-    <p><span class="highlight-skyblue">Cloud Computing</span>: AWS Certified Cloud Practitioner, Certified Cloud Security Professional (CCSP), Certified Data Privacy Solutions Engineer (CDPSE).</p>
-
-    <p><span class="highlight-skyblue">Data</span>: Certified Data Professional (CDP), Certified Ethical Hacker (CEH).</p>
-
-    <p><span class="highlight-skyblue">Security</span>: Certified Information Security Manager (CISM), Certified Information Systems Security Professional (CISSP).</p>
-
-    <p><span class="highlight-skyblue">Networking</span>: Cisco Certified Internetwork Expert (CCIE), Cisco Certified Network Professional (CCNP), CompTIA A+.</p>
-
-    <p><span class="highlight-skyblue">Platform-Specific</span>: Microsoft Certified Azure Solutions Architect Expert, Information Technology Infrastructure Library (ITIL), Oracle MySQL Database Administration, Project Management Professional (PMP), Salesforce Certified Development Lifecycle and Deployment Designer.</p>
-
-    <h3>Latest Trends and Technologies in Computing</h3>
-
-    <p><span class="highlight-skyblue">Artificial Intelligence (AI)</span>: Machine learning, natural language processing, computer vision.</p>
-
-    <p><span class="highlight-skyblue">Edge Computing</span>: Processing data closer to the source for faster response times.</p>
-
-    <p><span class="highlight-skyblue">Quantum Computing</span>: Solving complex problems at a faster rate than classical computers.</p>
-
-    <p><span class="highlight-skyblue">Robotics</span>: Development of autonomous machines for various tasks.</p>
-
-    <p><span class="highlight-skyblue">Cybersecurity</span>: Protecting computer systems and networks from cyber threats.</p>
-
-    <p><span class="highlight-skyblue">Bioinformatics</span>: Analyzing biological data using computational techniques.</p>
-
-    <p><span class="highlight-skyblue">Big Data Analytics</span>: Processing and analyzing large datasets.</p>
-
-    <p><span class="highlight-skyblue">Virtual and Augmented Reality</span>: Creating immersive digital experiences.</p>
-
-    <p><span class="highlight-skyblue">5G</span>: Next-generation wireless network technology.</p>
-
-    <p><span class="highlight-skyblue">Internet of Things (IoT)</span>: Connecting devices to the internet for data collection and communication.</p>
-    <h3>Module 2.0 <p><b>Introduction to Computers - Evolution of Computer</b></p><h3>
-    <h3>Key Learning Points:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">The different stages of computer development.</span></li>
-        <li><span class="highlight-skyblue">Influential figures and their contributions.</span></li>
-        <li><span class="highlight-skyblue">How breakthroughs shaped computer evolution.</span></li>
-        <li><span class="highlight-skyblue">The impact of computers on modern society.</span></li>
-    </ul>
-
-   <h3> A Timeline of Major Milestones:</h3>
-
-    <h5 style="text-align: center;">Early Computing Devices (Before Computers):</h5>
-    <ul>
-        <li><span class="highlight-skyblue">Abacus (Ancient)</span>: A manual tool for performing basic arithmetic operations.</li>
-        <li><span class="highlight-skyblue">Napier's Bones (17th Century)</span>: An aid for multiplication and division.</li>
-        <li><span class="highlight-skyblue">Pascaline (17th Century)</span>: A mechanical calculator for addition and subtraction.</li>
-        <li><span class="highlight-skyblue">Difference Engine and Analytical Engine (19th Century)</span>: Charles Babbage's concepts for programmable mechanical computers.</li>
-    </ul>
-
-    <h5 style="text-align: center;">First Generation Computers (1940s-1950s):</h5>
-    <ul>
-        <li>Relied on <span class="highlight-skyblue">vacuum tubes</span> for processing.</li>
-        <li>Examples: <span class="highlight-skyblue">ENIAC</span> (Electronic Numerical Integrator and Computer) and <span class="highlight-skyblue">UNIVAC</span> (Universal Automatic Computer).</li>
-        <li>Large, slow, and power-hungry.</li>
-        <li>Difficult and time-consuming programming.</li>
-    </ul>
-
-    <h5 style="text-align: center;">Second Generation Computers (1950s-1960s):</h5>
-    <ul>
-        <li><span class="highlight-skyblue">Transistors</span> replaced vacuum tubes, leading to smaller, faster, and more reliable computers.</li>
-        <li><span class="highlight-skyblue">Assembly language</span> introduced for easier programming.</li>
-        <li><span class="highlight-skyblue">Batch operating systems</span> improved efficiency.</li>
-    </ul>
-
-    <h5 style="text-align: center;">Third Generation Computers (1960s-1970s):</h5>
-    <ul>
-        <li><span class="highlight-skyblue">Integrated circuits (ICs)</span> packed thousands of transistors onto a single chip, dramatically reducing size and increasing processing power.</li>
-        <li>Development of sophisticated <span class="highlight-skyblue">operating systems</span> for multi-user interaction.</li>
-        <li><span class="highlight-skyblue">Time-sharing systems</span> enabled multiple users to share resources.</li>
-    </ul>
-
-    <h5 style="text-align: center;">Fourth Generation Computers (1970s-1980s):</h5>
-    <ul>
-        <li><span class="highlight-skyblue">Microprocessors</span> led to the creation of affordable personal computers (PCs).</li>
-        <li><span class="highlight-skyblue">Graphical User Interfaces (GUIs)</span> with icons and menus replaced complex command lines.</li>
-        <li><span class="highlight-skyblue">Networking</span> and the <span class="highlight-skyblue">Internet</span> facilitated communication and information sharing.</li>
-    </ul>
-
-    <h5 style="text-align: center;">Fifth Generation Computers (Present and Beyond):</h5>
-    <ul>
-        <li>Focused on <span class="highlight-skyblue">Artificial Intelligence (AI)</span> and <span class="highlight-skyblue">machine learning</span>.</li>
-        <li><span class="highlight-skyblue">Expert systems</span> mimic human expertise in specific domains.</li>
-        <li><span class="highlight-skyblue">Parallel processing</span> and supercomputers with massive processing power.</li>
-        <li>Emerging trends: <span class="highlight-skyblue">Natural Language Processing</span>, <span class="highlight-skyblue">Advanced Robotics</span>, <span class="highlight-skyblue">Quantum Computing</span>, and <span class="highlight-skyblue">Augmented/Virtual Reality</span>.</li>
-    </ul>
-
-    <p><b style="color: skyblue;">The Future of Computing</b> promises exciting advancements in artificial intelligence, human-like problem-solving abilities, and immersive experiences blurring the lines between physical and digital worlds.</p>
-    
-    <h3>Module 2.1<p><b>Introduction to Computers - Advantages and Disadvantages of Computers</b></p></h3>
-
-    <h3>Advantages:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Education</span>: Online learning platforms, vast educational resources, and research tools enhance learning experiences.</li>
-        <li><span class="highlight-skyblue">Communication</span>: Email, social media, video conferencing, and remote work options improve communication and collaboration.</li>
-        <li><span class="highlight-skyblue">Healthcare</span>: Electronic health records, telemedicine, and research advancements contribute to better healthcare delivery.</li>
-        <li><span class="highlight-skyblue">Business</span>: Increased efficiency, productivity, automation, and e-commerce opportunities lead to business growth.</li>
-        <li><span class="highlight-skyblue">Entertainment</span>: Gaming, music streaming, movie libraries, and VR offer diverse entertainment options.</li>
-    </ul>
-
-   <h3> Disadvantages:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Health Problems</span>: Eye strain, lack of exercise, addiction, and cyberbullying can arise from excessive computer use.</li>
-        <li><span class="highlight-skyblue">Privacy Concerns</span>: Data breaches, identity theft, and government/corporate surveillance threaten personal privacy.</li>
-        <li><span class="highlight-skyblue">Dependence</span>: Over-reliance on technology can hinder problem-solving and critical thinking skills. Automation may lead to job losses.</li>
-        <li><span class="highlight-skyblue">Digital Divide</span>: Unequal access to computers and the internet creates a gap between those who have and have-nots.</li>
-        <li><span class="highlight-skyblue">Environmental Consequences</span>: E-waste disposal and energy consumption by data centers pose environmental challenges.</li>
-    </ul>
-
-    <h3>Ethical Considerations:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Intellectual Property Rights</span>: Copyright protects creative works, and plagiarism is an ethical violation.</li>
-        <li><span class="highlight-skyblue">Online Ethics</span>: Cyberbullying, online harassment, and managing your digital footprint are important considerations.</li>
-        <li><span class="highlight-skyblue">Privacy vs. Security</span>: Balancing the right to privacy with the need for data security is an ongoing challenge.</li>
-    </ul>
-
-    <h3>Module 2.2 <p><b>Data vs. Information</b></p></h3>
-
-    <h3>Key Concepts:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Data</span>: Raw, unprocessed facts or figures that lack context or meaning on their own.</li>
-        <li><span class="highlight-skyblue">Information</span>: Data that has been processed, organized, and interpreted to provide context and meaning.</li>
-        <li><span class="highlight-skyblue">Knowledge</span>: The application of information to solve problems or achieve goals.</li>
-    </ul>
-
-    <h3>Key Differences:</h3>
-    <table>
-        <tr>
-            <th style="color: skyblue;">Feature</th>
-            <th><span class="highlight-skyblue">Data</span></th>
-            <th><span class="highlight-skyblue">Information</span></th>
-            <th><span class="highlight-skyblue">Knowledge</span></th>
-        </tr>
-        <tr>
-            <td>State</td>
-            <td>Raw, unorganized</td>
-            <td>Processed, organized</td>
-            <td>Applied and understood</td>
-        </tr>
-        <tr>
-            <td>Context</td>
-            <td>Lacking context</td>
-            <td>Has context and meaning</td>
-            <td>Used to make decisions</td>
-        </tr>
-        <tr>
-            <td>Value</td>
-            <td>Low intrinsic value</td>
-            <td>High value for decision-making</td>
-            <td>Highest value, as it enables action</td>
-        </tr>
-    </table>
-
-    <h3>Role of Computers in Data and Information:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Data Storage</span>: Computers store vast amounts of data.</li>
-        <li><span class="highlight-skyblue">Data Processing</span>: Computers process data to extract information.</li>
-        <li><span class="highlight-skyblue">Information Analysis</span>: Computers analyze data to identify patterns and trends.</li>
-        <li><span class="highlight-skyblue">Knowledge Creation</span>: Computers facilitate the creation of knowledge through data analysis and simulation.</li>
-        <li><span class="highlight-skyblue">Decision Support</span>: Computers provide information to support informed decision-making.</li>
-    </ul>
-
-    <h3>Examples of Data and Information:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Data</span>: A list of sales figures, customer names, and product prices.</li>
-        <li><span class="highlight-skyblue">Information</span>: Identifying the best-selling product, average customer spending, or trends in sales over time.</li>
-    </ul>
-
-    <h3>The Journey from Data to Information:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Data Collection</span>: Gathering raw data from various sources.</li>
-        <li><span class="highlight-skyblue">Data Cleaning</span>: Ensuring data accuracy and consistency.</li>
-        <li><span class="highlight-skyblue">Data Analysis</span>: Applying statistical and analytical techniques to extract insights.</li>
-        <li><span class="highlight-skyblue">Information Presentation</span>: Visualizing data in a meaningful way (e.g., graphs, charts).</li>
-    </ul>
-
-    <h3>Impact of Computers on Knowledge Creation and Decision Making:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Access to Information</span>: Computers provide access to vast amounts of data.</li>
-        <li><span class="highlight-skyblue">Data-Driven Decisions</span>: Computers enable data-driven decision-making.</li>
-        <li><span class="highlight-skyblue">Complex Problem Solving</span>: Computers can model complex systems and simulate different scenarios.</li>
-        <li><span class="highlight-skyblue">Automation</span>: Computers automate routine tasks, freeing up human resources for higher-level thinking.</li>
-    </ul>
-
-    <h3>Key Terms:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Data</span>: Raw facts and figures</li>
-        <li><span class="highlight-skyblue">Information</span>: Processed data with context and meaning</li>
-        <li><span class="highlight-skyblue">Knowledge</span>: Application of information to solve problems</li>
-        <li><span class="highlight-skyblue">Data Analysis</span>: The process of inspecting, cleaning, transforming, and modeling data with the goal of discovering useful information, suggesting conclusions, and supporting decision-making.</li>
-    </ul>
-    
-
-    <h3>Module 2.3 <p><b>Computer Usage</b></p></h3>
-
-    <h3>Importance of Computers:</h3>
-    <p>Computers are an essential part of modern life. Understanding computers is crucial for students, professionals, and anyone online.</p>
-
-    
-
-    <h3>I. Introduction to Computers</h3>
-    <p><span class="highlight-skyblue">Definition</span>: Electronic device processing data according to instructions.</p>
-
-    <h3>Basic Components:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">CPU</span>: Executes instructions and performs calculations.</li>
-        <li><span class="highlight-skyblue">RAM</span>: Temporary storage for data currently in use.</li>
-        <li><span class="highlight-skyblue">Storage</span>: Holds data and programs permanently (hard drives, SSDs, optical drives).</li>
-        <li><span class="highlight-skyblue">Input Devices</span>: Enter data (keyboard, mouse, scanner, microphone).</li>
-        <li><span class="highlight-skyblue">Output Devices</span>: Display processed data (monitor, printer, speakers).</li>
-    </ul>
-
-    <h3>Types of Computers:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Desktop</span>: Separate monitor, keyboard, and mouse.</li>
-        <li><span class="highlight-skyblue">Laptop</span>: Portable computer combining desktop functions into one unit.</li>
-        <li><span class="highlight-skyblue">Tablet</span>: Handheld device with a touchscreen interface.</li>
-        <li><span class="highlight-skyblue">Smartphone</span>: Mobile phone with internet, apps, and touchscreen.</li>
-    </ul>
-
-    <h3>II. Operating Systems (OS)</h3>
-    <p><span class="highlight-skyblue">Definition</span>: Software managing computer hardware and software resources.</p>
-
-    <h3>Common Operating Systems:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Windows</span>: Most popular for personal computers (Microsoft).</li>
-        <li><span class="highlight-skyblue">macOS</span>: Used on Apple computers (MacBooks, iMacs).</li>
-        <li><span class="highlight-skyblue">Linux</span>: Open-source operating system known for flexibility and security (popular among developers).</li>
-    </ul>
-
-    <h3>Basic OS Functions:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">File Management</span>: Organize files and folders on storage devices.</li>
-        <li><span class="highlight-skyblue">Application Management</span>: Load, run, and manage applications.</li>
-        <li><span class="highlight-skyblue">Resource Allocation</span>: Allocate resources like CPU time, memory, and storage.</li>
-        <li><span class="highlight-skyblue">Input/Output Handling</span>: Manage communication with input/output devices.</li>
-    </ul>
-
-    <h3>Navigating the OS:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Desktop</span>: Main screen or workspace.</li>
-        <li><span class="highlight-skyblue">Icons</span>: Pictures or symbols representing files, folders, or applications.</li>
-        <li><span class="highlight-skyblue">Windows</span>: Rectangular areas on the screen displaying content.</li>
-    </ul>
-
-    <h3>III. Using Applications</h3>
-
-    <h3>Word Processing:</h3>
-    <ul>
-        <li>Creating documents: Typing text, inserting images, adding tables.</li>
-        <li>Editing documents: Making changes to text, formatting, and layout.</li>
-        <li>Formatting documents: Applying styles, fonts, and spacing for readability.</li>
-    </ul>
-
-    <h3>Spreadsheets:</h3>
-    <ul>
-        <li>Creating spreadsheets: Organizing data into rows and columns.</li>
-        <li>Editing spreadsheets: Entering, changing, and deleting data.</li>
-        <li>Analyzing data: Using formulas and functions to perform calculations and create charts.</li>
-    </ul>
-
-    <h3>Presentation Software:</h3>
-    <ul>
-        <li>Creating presentations: Designing slides with text, images, and multimedia elements.</li>
-        <li>Editing presentations: Adding, deleting, and modifying slides.</li>
-        <li>Delivering presentations: Using a projector or screen to display slides and present information.</li>
-    </ul>
-
-    <h3>Web Browsing:</h3>
-    <ul>
-        <li>Using a web browser: Navigating websites using URLs and hyperlinks.</li>
-        <li>Searching for information: Using search engines to find relevant content.</li>
-    </ul>
-
-    <h3>Email:</h3>
-    <ul>
-        <li>Sending emails: Composing messages and attaching files.</li>
-        <li>Receiving emails: Checking your inbox and reading messages.</li>
-        <li>Organizing emails: Creating folders, labeling, and filtering emails.</li>
-    </ul>
-
-    <h3>IV. Computer Safety and Maintenance</h3>
-
-    <h3>Virus and Malware Protection:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Understanding viruses and malware</span>: Malicious software that can harm your computer or steal information.</li>
-        <li>Using antivirus software: Install and update antivirus software to detect and remove threats.</li>
-        <li>Be cautious with downloads: Only download files from trusted sources and avoid suspicious links.</li>
-    </ul>
-
-    <h3>Safe Internet Practices:</h3>
-    <ul>
-        <li>Avoiding phishing scams: Be wary of emails or websites asking for personal information.</li>
-        <li>Protecting personal information: Be cautious about sharing personal details online, especially on social media.</li>
-        <li>Using strong passwords: Create complex passwords that are difficult to guess.</li>
-    </ul>
-
-    <h3>Backing Up Data:</h3>
-    <ul>
-        <li><span class="highlight-skyblue">Importance of backups</span>: Protect your data from accidental loss or damage.</li>
-        <li>Backup methods: External hard drives, cloud storage, or online backup services.</li>
-        <li>Regular backups: Create backups on a regular schedule to ensure data protection.</li>
-    </ul>
-
-    <h3>Proper Computer Care:</h3>
-    <ul>
-        <li>Cleaning: Regularly clean computer hardware to prevent dust buildup and overheating.</li>
-        <li>Ventilation: Ensure proper airflow around your computer to avoid overheating.</li>
-        <li>Avoiding liquids: Keep liquids away from your computer to prevent damage.</li>
-    </ul>
-    <h3>Module 2.4 <p><b>Research and Applications in Different Computing fields</b></p></h3>
- 
-
-  <h3>I. Artificial Intelligence and Machine Learning (AI/ML)</h3>
-  <ul>
-    <li>AI is a field concerned with building <span class="skyblue">intelligent machines</span>.</li>
-    <li>It involves various disciplines like computer science, data science, and engineering.</li>
-    <li>AI works by learning from vast amounts of data and identifying patterns.</li>
-    <li>There are different stages of AI development, from reactive machines to self-aware (not yet achieved).</li>
-    <li>Common types of AI include narrow AI (current AI) and artificial general intelligence (AGI - not yet achieved).</li>
-    <li>Machine learning uses algorithms to train data for tasks like classification and prediction.</li>
-    <li>Common training models include supervised learning, unsupervised learning, and reinforcement learning.</li>
-    <li>Artificial neural networks are a common type of training model inspired by the human brain.</li>
-  </ul>
-
-  <h3>II. Data Science and Analytics</h3>
-  <ul>
-    <li>Data science combines statistics, computer science, and domain expertise to extract insights from data.</li>
-    <li>It involves collecting, cleaning, analyzing, and interpreting data for informed decisions.</li>
-    <li>Data collection involves gathering data from various sources, while data cleaning involves fixing errors and inconsistencies.</li>
-    <li>Data analysis techniques include statistical analysis (descriptive and inferential statistics) and data mining (association rule mining, clustering, classification, regression).</li>
-    <li>Data science has applications in business intelligence, market research, healthcare analytics, and fraud detection.</li>
-  </ul>
-
-  <h3>III. Cybersecurity</h3>
-  <ul>
-    <li>Cybersecurity protects computer systems, networks, and data from unauthorized access and harm.</li>
-    <li>Common cyber threats include malware, phishing, and hacking.</li>
-    <li>Cybersecurity best practices involve encryption, firewalls, access controls, regular updates, employee training, and incident response planning.</li>
-    <li>Applications of cybersecurity include network security, data protection, incident response, and compliance.</li>
-  </ul>
-
-  <h3>IV. Cloud Computing</h3>
-  <ul>
-    <li>Cloud computing delivers IT services (infrastructure, platform, software) over the internet on-demand.</li>
-    <li>Cloud service models include IaaS (infrastructure), PaaS (platform), and SaaS (software).</li>
-    <li>Cloud deployment models include public cloud, private cloud, and hybrid cloud.</li>
-    <li>Cloud computing offers scalability, cost-efficiency, data storage, accessibility, and disaster recovery benefits.</li>
-  </ul>
-
-  <h3>V. Internet of Things (IoT)</h3>
-  <ul>
-    <li>IoT refers to the interconnection of physical devices with sensors and internet connectivity for data exchange.</li>
-    <li>IoT components include sensors, actuators, and networks.</li>
-    <li>Applications of IoT include smart homes, smart cities, industrial IoT, healthcare, and agriculture.</li>
-    <li>Challenges of IoT involve security, interoperability, data privacy, scalability, and energy efficiency.</li>
-  </ul>
-
-  <h3>VI. Robotics</h3>
-  <ul>
-    <li>Robotics is the engineering field of designing, building, operating, and applying robots.</li>
-    <li>Robots are programmable machines that can perform tasks autonomously or with human guidance.</li>
-    <li>Types of robots include industrial robots, service robots, and autonomous robots.</li>
-    <li>Robot components include sensors, actuators, and control systems.</li>
-    <li>Robotics applications include manufacturing, healthcare, exploration, and more.</li>
-  </ul>
-
-  <h3>VII. Human-Computer Interaction (HCI)</h3>
-  <ul>
-    <li>HCI studies the interaction between humans and computers, focusing on user-friendly interfaces.</li>
-    <li>HCI professionals design clear, consistent, efficient, aesthetic, and flexible interfaces.</li>
-    <li>User experience research methods involve user testing, surveys, interviews, heuristic evaluation, and eye tracking.</li>
-    <li>Applications of HCI include website design, mobile app development, virtual reality, augmented reality, and wearable technology.</li>
-  </ul>
-
-
-        </div>
-        <a href="index.html" class="back-button">&lt; Back to Main</a>
+  <div class="matrix-background">
+    <canvas id="matrix"></canvas>
+  </div>
+
+  <div class="container">
+    <h1>BS Information Systems</h1>
+    <div class="bsis-a">BSIS-1A</div>
+
+    <div class="cards-container">
+      <div class="card">
+        <h2><a href="#">Subject Name</a></h2>
+        <p>Details coming soon.</p>
+      </div>
     </div>
+  </div>
+
+  <footer>© 2025 Designed and Developed by R.D.</footer>
+
+  <script>
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()';
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const drops = Array.from({ length: columns }).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff00';
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, x) => {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, x * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[x] = 0;
+        }
+        drops[x]++;
+      });
+    }
+
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
+
 </html>
